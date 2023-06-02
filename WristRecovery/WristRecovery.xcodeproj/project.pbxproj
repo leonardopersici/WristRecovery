@@ -32,6 +32,8 @@
 		E3147CA5290541DA00A7A811 /* ext.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3147CA3290541DA00A7A811 /* ext.mp3 */; };
 		E3147CA6290541DA00A7A811 /* flex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3147CA4290541DA00A7A811 /* flex.mp3 */; };
 		E32138EC29E5A9C700DE18A0 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E32138EB29E5A9C600DE18A0 /* wrong.mp3 */; };
+		E337B7072A29D3B900B7DFD4 /* Utenti.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337B7062A29D3B900B7DFD4 /* Utenti.swift */; };
+		E337B7092A29D55200B7DFD4 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337B7082A29D55200B7DFD4 /* DBManager.swift */; };
 		E39F611A28E3629100825717 /* WristRecoveryBLU.png in Resources */ = {isa = PBXBuildFile; fileRef = E39F611828E3629100825717 /* WristRecoveryBLU.png */; };
 		E39F611B28E3629100825717 /* WristRecoveryLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E39F611928E3629100825717 /* WristRecoveryLogo.png */; };
 		E39F611D28E36C9100825717 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F611C28E36C9100825717 /* StartViewController.swift */; };
@@ -74,6 +76,8 @@
 		E3147CA3290541DA00A7A811 /* ext.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ext.mp3; sourceTree = "<group>"; };
 		E3147CA4290541DA00A7A811 /* flex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flex.mp3; sourceTree = "<group>"; };
 		E32138EB29E5A9C600DE18A0 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		E337B7062A29D3B900B7DFD4 /* Utenti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utenti.swift; sourceTree = "<group>"; };
+		E337B7082A29D55200B7DFD4 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E39F611828E3629100825717 /* WristRecoveryBLU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WristRecoveryBLU.png; sourceTree = "<group>"; };
 		E39F611928E3629100825717 /* WristRecoveryLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WristRecoveryLogo.png; sourceTree = "<group>"; };
 		E39F611C28E36C9100825717 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 		4A2D23B022BB70E400494C55 /* GuessMyExercise */ = {
 			isa = PBXGroup;
 			children = (
+				E337B7052A29D38800B7DFD4 /* Models */,
 				E3147CA2290541DA00A7A811 /* Sounds */,
 				E3DC842528E58CE50035CCC3 /* SpeechService */,
 				E39F611728E3629100825717 /* Img */,
@@ -226,6 +231,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		E337B7052A29D38800B7DFD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E337B7062A29D3B900B7DFD4 /* Utenti.swift */,
+				E337B7082A29D55200B7DFD4 /* DBManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E39F611728E3629100825717 /* Img */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,8 +303,9 @@
 		4A2D23A622BB70E400494C55 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					4A2D23AD22BB70E400494C55 = {
@@ -344,7 +359,9 @@
 				DF96FB1F256864520086C3AB /* PerformanceReporter.swift in Sources */,
 				DF898FB425AFC15700CA35A8 /* AVCaptureDeviceInput+Camera.swift in Sources */,
 				4AA5C4B822BB9CC200277977 /* VideoCapture.swift in Sources */,
+				E337B7092A29D55200B7DFD4 /* DBManager.swift in Sources */,
 				DF120B2C2565F89F003ABE6E /* ExerciseClassifier+PredictAction.swift in Sources */,
+				E337B7072A29D3B900B7DFD4 /* Utenti.swift in Sources */,
 				DF20C7392578047E00C9DB98 /* Pose+Connection.swift in Sources */,
 				FADD45BD24D55CE200955140 /* AVCaptureDevice+FrameRate.swift in Sources */,
 				50E5D801247B932E00A25665 /* SummaryViewController.swift in Sources */,
