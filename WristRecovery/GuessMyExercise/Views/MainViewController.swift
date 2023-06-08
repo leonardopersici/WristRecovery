@@ -139,12 +139,10 @@ extension MainViewController {
     /// Toggles the video capture between the front- and back-facing cameras.
     @IBAction func onCameraButtonTapped(_: Any) {
         videoCapture.toggleCameraSelection()
-        self.db.insertMedico(id: 0, username: "Medico1", password: "1234", pazienti: [0, 1])
     }
 
     /// Presents a summary view of the user's actions and their total times.
     @IBAction func onSummaryButtonTapped() {
-        print(db.read())
         let main = UIStoryboard(name: "Main", bundle: nil)
 
         // Get the view controller based on its name.

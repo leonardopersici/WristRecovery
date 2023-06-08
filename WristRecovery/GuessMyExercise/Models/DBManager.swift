@@ -17,6 +17,9 @@ class DBManager {
         self.createTableMedici()
         self.createTablePazienti()
         self.createTableEsercizi()
+        self.insertPaziente(id: 1, username: "Paziente2", password: "0000", medico: 0)
+        print(readMedici())
+        print(readPazienti())
     }
     
     func createDB() -> OpaquePointer? {
@@ -33,7 +36,7 @@ class DBManager {
     }
     
     func createTableMedici() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Medici(Id INTEGER PRIMARY KEY,username TEXT, password TEXT, pazienti TEXT);";
+        let createTableString = "CREATE TABLE IF NOT EXISTS Medici(Id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, pazienti TEXT);";
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -50,7 +53,7 @@ class DBManager {
     }
     
     func createTablePazienti() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Pazienti(Id INTEGER PRIMARY KEY,username TEXT, password TEXT, medico INTEGER);";
+        let createTableString = "CREATE TABLE IF NOT EXISTS Pazienti(Id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, medico INTEGER);";
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -67,7 +70,7 @@ class DBManager {
     }
     
     func createTableEsercizi() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Esercizi(Id INTEGER PRIMARY KEY,assegnatoDa INTEGER, assegnatoA INTEGER, completato INTEGER);";
+        let createTableString = "CREATE TABLE IF NOT EXISTS Esercizi(Id INTEGER PRIMARY KEY AUTOINCREMENT,assegnatoDa INTEGER, assegnatoA INTEGER, flex INTEGER, ext INTEGER, completato INTEGER);";
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -84,69 +87,152 @@ class DBManager {
     }
     
     func insertMedico(id:Int, username:String, password:String, pazienti:[Int]) {
-       let insertStatementString = "INSERT INTO Medici (Id, username, password, pazienti) VALUES (?, ?, ?, ?);"
-       var insertStatement: OpaquePointer? = nil
-       if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-           sqlite3_bind_int(insertStatement, 1, Int32(id))
-           sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
-           sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
-           
-           let data = try! JSONEncoder().encode(pazienti)
-           let pazientiString = String(data: data, encoding: .utf8)
-           sqlite3_bind_text(insertStatement, 4, (pazientiString as! NSString).utf8String, -1, nil)
-             
-           if sqlite3_step(insertStatement) == SQLITE_DONE {
-               print("Successfully inserted Medico row.")
-           } else {
-               print("Could not insert Medico row.")
-           }
-       } else {
-           print("INSERT Medico statement could not be prepared.")
-       }
-       sqlite3_finalize(insertStatement)
+        if(readMedici().isEmpty){
+            let insertStatementString = "INSERT INTO Medici (Id, username, password, pazienti) VALUES (?, ?, ?, ?);"
+            var insertStatement: OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                 sqlite3_bind_int(insertStatement, 1, 0)
+                sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
+                
+                let data = try! JSONEncoder().encode(pazienti)
+                let pazientiString = String(data: data, encoding: .utf8)
+                sqlite3_bind_text(insertStatement, 4, (pazientiString! as NSString).utf8String, -1, nil)
+                  
+                if sqlite3_step(insertStatement) == SQLITE_DONE {
+                    print("Successfully inserted Medico row.")
+                } else {
+                    print("Could not insert Medico row.")
+                }
+            } else {
+                print("INSERT Medico statement could not be prepared.")
+            }
+            sqlite3_finalize(insertStatement)
+        } else {
+            for m in readMedici() {
+                if (id != m.id && username != m.username){
+                   let insertStatementString = "INSERT INTO Medici (Id, username, password, pazienti) VALUES (?, ?, ?, ?);"
+                   var insertStatement: OpaquePointer? = nil
+                   if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                       sqlite3_bind_int(insertStatement, 1, Int32(id))
+                       sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
+                       sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
+                       
+                       let data = try! JSONEncoder().encode(pazienti)
+                       let pazientiString = String(data: data, encoding: .utf8)
+                       sqlite3_bind_text(insertStatement, 4, (pazientiString! as NSString).utf8String, -1, nil)
+                         
+                       if sqlite3_step(insertStatement) == SQLITE_DONE {
+                           print("Successfully inserted Medico row.")
+                       } else {
+                           print("Could not insert Medico row.")
+                       }
+                   } else {
+                       print("INSERT Medico statement could not be prepared.")
+                   }
+                   sqlite3_finalize(insertStatement)
+                 break
+                }
+            }
+            
+        }
     }
     
     func insertPaziente(id:Int, username:String, password:String, medico:Int) {
-       let insertStatementString = "INSERT INTO Pazienti (Id, username, password, medico) VALUES (?, ?, ?, ?);"
-       var insertStatement: OpaquePointer? = nil
-       if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-           sqlite3_bind_int(insertStatement, 1, Int32(id))
-           sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
-           sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
-           sqlite3_bind_int(insertStatement, 4, Int32(medico))
-             
-           if sqlite3_step(insertStatement) == SQLITE_DONE {
-               print("Successfully inserted Paziente row.")
-           } else {
-               print("Could not insert Paziente row.")
-           }
-       } else {
-           print("INSERT Paziente statement could not be prepared.")
-       }
-       sqlite3_finalize(insertStatement)
+        if(readPazienti().isEmpty){
+            let insertStatementString = "INSERT INTO Pazienti (Id, username, password, medico) VALUES (?, ?, ?, ?);"
+            var insertStatement: OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                sqlite3_bind_int(insertStatement, 1, 0)
+                sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
+                sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
+                sqlite3_bind_int(insertStatement, 4, Int32(medico))
+                
+                if sqlite3_step(insertStatement) == SQLITE_DONE {
+                    print("Successfully inserted Paziente row.")
+                } else {
+                    print("Could not insert Paziente row.")
+                }
+            } else {
+                print("INSERT Paziente statement could not be prepared.")
+            }
+            sqlite3_finalize(insertStatement)
+        } else {
+            for p in readPazienti() {
+                if (id != p.id && username != p.username){
+                    let insertStatementString = "INSERT INTO Pazienti (Id, username, password, medico) VALUES (?, ?, ?, ?);"
+                    var insertStatement: OpaquePointer? = nil
+                    if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                        sqlite3_bind_int(insertStatement, 1, Int32(id))
+                        sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
+                        sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
+                        sqlite3_bind_int(insertStatement, 4, Int32(medico))
+                        
+                        if sqlite3_step(insertStatement) == SQLITE_DONE {
+                            print("Successfully inserted Paziente row.")
+                        } else {
+                            print("Could not insert Paziente row.")
+                        }
+                    } else {
+                        print("INSERT Paziente statement could not be prepared.")
+                    }
+                    sqlite3_finalize(insertStatement)
+                    break
+                }
+            }
+        }
     }
     
-    func insertEsercizio(id:Int, assegnatoDa:String, assegnatoA:String, completato:Int) {
-       let insertStatementString = "INSERT INTO Esercizi (Id, assegnatoDa, assegnatoA, completato) VALUES (?, ?, ?, ?);"
-       var insertStatement: OpaquePointer? = nil
-       if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-           sqlite3_bind_int(insertStatement, 1, Int32(id))
-           sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa)!)
-           sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA)!)
-           sqlite3_bind_int(insertStatement, 4, Int32(completato))
-             
-           if sqlite3_step(insertStatement) == SQLITE_DONE {
-               print("Successfully inserted Esercizio row.")
+    func insertEsercizio(id:Int, assegnatoDa:String, assegnatoA:String, flex:String, ext:String, completato:Int) {
+        if(readEsercizi().isEmpty){
+            let insertStatementString = "INSERT INTO Esercizi (Id, assegnatoDa, assegnatoA, flex, ext, completato) VALUES (?, ?, ?, ?, ?, ?);"
+            var insertStatement: OpaquePointer? = nil
+           if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+               sqlite3_bind_int(insertStatement, 1, 0)
+               sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa)!)
+               sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA)!)
+               sqlite3_bind_int(insertStatement, 4, Int32(flex)!)
+               sqlite3_bind_int(insertStatement, 5, Int32(ext)!)
+               sqlite3_bind_int(insertStatement, 6, Int32(completato))
+                 
+               if sqlite3_step(insertStatement) == SQLITE_DONE {
+                   print("Successfully inserted Esercizio row.")
+               } else {
+                   print("Could not insert Esercizio row.")
+               }
            } else {
-               print("Could not insert Esercizio row.")
+               print("INSERT Esercizio statement could not be prepared.")
            }
-       } else {
-           print("INSERT Esercizio statement could not be prepared.")
-       }
-       sqlite3_finalize(insertStatement)
+           sqlite3_finalize(insertStatement)
+        } else {
+            for e in readEsercizi() {
+                if (id != e.id){
+                    let insertStatementString = "INSERT INTO Esercizi (Id, assegnatoDa, assegnatoA, flex, ext, completato) VALUES (?, ?, ?, ?, ?, ?);"
+                    var insertStatement: OpaquePointer? = nil
+                   if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+                       sqlite3_bind_int(insertStatement, 1, Int32(id))
+                       sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa)!)
+                       sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA)!)
+                       sqlite3_bind_int(insertStatement, 4, Int32(flex)!)
+                       sqlite3_bind_int(insertStatement, 5, Int32(ext)!)
+                       sqlite3_bind_int(insertStatement, 6, Int32(completato))
+                         
+                       if sqlite3_step(insertStatement) == SQLITE_DONE {
+                           print("Successfully inserted Esercizio row.")
+                       } else {
+                           print("Could not insert Esercizio row.")
+                       }
+                   } else {
+                       print("INSERT Esercizio statement could not be prepared.")
+                   }
+                   sqlite3_finalize(insertStatement)
+                   break
+                }
+            }
+        }
     }
     
-    func read() -> [Medico] {
+    func readMedici() -> [Medico] {
             var mainList = [Medico]()
             
             let query = "SELECT * FROM Medici;"
@@ -168,10 +254,114 @@ class DBManager {
                     model.pazienti = data
                     
                     mainList.append(model)
-                    print("Query Result:")
+                    print("Query Medici Result:")
                     print("\(id) | \(username) | \(password) | \(pazienti)")
                 }
             }
         return mainList
+    }
+    
+    func readPazienti() -> [Paziente] {
+            var mainList = [Paziente]()
+            
+            let query = "SELECT * FROM Pazienti;"
+            var statement : OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    let id = Int(sqlite3_column_int(statement, 0))
+                    let username = String(describing: String(cString: sqlite3_column_text(statement, 1)))
+                    let password = String(describing: String(cString: sqlite3_column_text(statement, 2)))
+                    let medico = Int(sqlite3_column_int(statement, 3))
+
+                    let model = Paziente()
+                    model.id = id
+                    model.username = username
+                    model.password = password
+                    model.medico = medico
+                    
+                    mainList.append(model)
+                    print("Query Pazienti Result:")
+                    print("\(id) | \(username) | \(password) | \(medico)")
+                }
+            }
+        return mainList
+    }
+    
+    func readEsercizi() -> [Esercizio] {
+            var mainList = [Esercizio]()
+            
+            let query = "SELECT * FROM Esercizi;"
+            var statement : OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    let id = Int(sqlite3_column_int(statement, 0))
+                    let assegnatoDa = Int(sqlite3_column_int(statement, 1))
+                    let assegnatoA = Int(sqlite3_column_int(statement, 2))
+                    let flex = Int(sqlite3_column_int(statement,3))
+                    let ext = Int(sqlite3_column_int(statement, 4))
+                    let completato = Int(sqlite3_column_int(statement, 5))
+
+                    let model = Esercizio()
+                    model.id = id
+                    model.assegnatoDa = assegnatoDa
+                    model.assegnatoA = assegnatoA
+                    model.flex = flex
+                    model.ext = ext
+                    model.completato = completato
+                    
+                    mainList.append(model)
+                    print("Query Esercizi Result:")
+                    print("\(id) | \(assegnatoDa) | \(assegnatoA) | \(flex) | \(ext) | \(completato)")
+                }
+            }
+        return mainList
+    }
+    
+    func deleteMedico(id : Int) {
+        let query = "DELETE FROM Medici where id = \(id)"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Medico \(id) delete success")
+            }else {
+                print("Medico \(id) is not deleted in table")
+            }
         }
+    }
+    
+    func deletePaziente(id : Int) {
+        let query = "DELETE FROM Pazienti where id = \(id)"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Paziente \(id) delete success")
+            }else {
+                print("Paziente \(id) is not deleted in table")
+            }
+        }
+    }
+    
+    func updateMedico(id : Int, attributo:String, valore:String) {
+        let query = "UPDATE Medici SET \(attributo) = \(valore) WHERE id = \(id);"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Medico \(id) updated success")
+            }else {
+                print("Medico \(id) is not updated in table")
+            }
+        }
+    }
+    
+    func updatePaziente(id : Int, attributo:String, valore:String) {
+        let query = "UPDATE Pazienti SET \(attributo) = \(valore) WHERE id = \(id);"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Paziente \(id) updated success")
+            }else {
+                print("Paziente \(id) is not updated in table")
+            }
+        }
+    }
 }

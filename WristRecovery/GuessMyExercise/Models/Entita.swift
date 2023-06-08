@@ -26,5 +26,7 @@ class Esercizio {
     var id : Int = 0
     var assegnatoDa : Int?
     var assegnatoA : Int?
+    var flex : Int?
+    var ext : Int?
     var completato : Int = 0
 }

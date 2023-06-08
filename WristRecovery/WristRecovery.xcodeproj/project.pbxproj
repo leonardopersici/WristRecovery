@@ -32,8 +32,9 @@
 		E3147CA5290541DA00A7A811 /* ext.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3147CA3290541DA00A7A811 /* ext.mp3 */; };
 		E3147CA6290541DA00A7A811 /* flex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3147CA4290541DA00A7A811 /* flex.mp3 */; };
 		E32138EC29E5A9C700DE18A0 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E32138EB29E5A9C600DE18A0 /* wrong.mp3 */; };
-		E337B7072A29D3B900B7DFD4 /* Utenti.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337B7062A29D3B900B7DFD4 /* Utenti.swift */; };
+		E337B7072A29D3B900B7DFD4 /* Entita.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337B7062A29D3B900B7DFD4 /* Entita.swift */; };
 		E337B7092A29D55200B7DFD4 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337B7082A29D55200B7DFD4 /* DBManager.swift */; };
+		E39A648B2A2B2C4B00217BB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39A648A2A2B2C4B00217BB0 /* LoginViewController.swift */; };
 		E39F611A28E3629100825717 /* WristRecoveryBLU.png in Resources */ = {isa = PBXBuildFile; fileRef = E39F611828E3629100825717 /* WristRecoveryBLU.png */; };
 		E39F611B28E3629100825717 /* WristRecoveryLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E39F611928E3629100825717 /* WristRecoveryLogo.png */; };
 		E39F611D28E36C9100825717 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F611C28E36C9100825717 /* StartViewController.swift */; };
@@ -41,6 +42,7 @@
 		E3D0AFBC2901B1BF00BC6FD7 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0AFBB2901B1BF00BC6FD7 /* TutorialViewController.swift */; };
 		E3D0AFBE2901B1D100BC6FD7 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */; };
 		E3DC842728E58CF80035CCC3 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC842628E58CF80035CCC3 /* SpeechService.swift */; };
+		E3EE6C792A31DFA300CB9D18 /* MedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */; };
 		FADD45BD24D55CE200955140 /* AVCaptureDevice+FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD45BC24D55CE200955140 /* AVCaptureDevice+FrameRate.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,8 +78,9 @@
 		E3147CA3290541DA00A7A811 /* ext.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ext.mp3; sourceTree = "<group>"; };
 		E3147CA4290541DA00A7A811 /* flex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flex.mp3; sourceTree = "<group>"; };
 		E32138EB29E5A9C600DE18A0 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
-		E337B7062A29D3B900B7DFD4 /* Utenti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utenti.swift; sourceTree = "<group>"; };
+		E337B7062A29D3B900B7DFD4 /* Entita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entita.swift; sourceTree = "<group>"; };
 		E337B7082A29D55200B7DFD4 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		E39A648A2A2B2C4B00217BB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E39F611828E3629100825717 /* WristRecoveryBLU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WristRecoveryBLU.png; sourceTree = "<group>"; };
 		E39F611928E3629100825717 /* WristRecoveryLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WristRecoveryLogo.png; sourceTree = "<group>"; };
 		E39F611C28E36C9100825717 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		E3D0AFBB2901B1BF00BC6FD7 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		E3DC842628E58CF80035CCC3 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
+		E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoViewController.swift; sourceTree = "<group>"; };
 		FADD45BC24D55CE200955140 /* AVCaptureDevice+FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+FrameRate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +186,8 @@
 				4A2D23B722BB70E400494C55 /* Main.storyboard */,
 				E3D0AFBB2901B1BF00BC6FD7 /* TutorialViewController.swift */,
 				E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */,
+				E39A648A2A2B2C4B00217BB0 /* LoginViewController.swift */,
+				E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,7 +240,7 @@
 		E337B7052A29D38800B7DFD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E337B7062A29D3B900B7DFD4 /* Utenti.swift */,
+				E337B7062A29D3B900B7DFD4 /* Entita.swift */,
 				E337B7082A29D55200B7DFD4 /* DBManager.swift */,
 			);
 			path = Models;
@@ -356,18 +362,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39A648B2A2B2C4B00217BB0 /* LoginViewController.swift in Sources */,
 				DF96FB1F256864520086C3AB /* PerformanceReporter.swift in Sources */,
 				DF898FB425AFC15700CA35A8 /* AVCaptureDeviceInput+Camera.swift in Sources */,
 				4AA5C4B822BB9CC200277977 /* VideoCapture.swift in Sources */,
 				E337B7092A29D55200B7DFD4 /* DBManager.swift in Sources */,
 				DF120B2C2565F89F003ABE6E /* ExerciseClassifier+PredictAction.swift in Sources */,
-				E337B7072A29D3B900B7DFD4 /* Utenti.swift in Sources */,
+				E337B7072A29D3B900B7DFD4 /* Entita.swift in Sources */,
 				DF20C7392578047E00C9DB98 /* Pose+Connection.swift in Sources */,
 				FADD45BD24D55CE200955140 /* AVCaptureDevice+FrameRate.swift in Sources */,
 				50E5D801247B932E00A25665 /* SummaryViewController.swift in Sources */,
 				4A2D23B622BB70E400494C55 /* MainViewController.swift in Sources */,
 				E39F611D28E36C9100825717 /* StartViewController.swift in Sources */,
 				E3DC842728E58CF80035CCC3 /* SpeechService.swift in Sources */,
+				E3EE6C792A31DFA300CB9D18 /* MedicoViewController.swift in Sources */,
 				DFF8422E25CC7E9000DC36E5 /* ExerciseClassifier+Singleton.swift in Sources */,
 				E3D0AFBC2901B1BF00BC6FD7 /* TutorialViewController.swift in Sources */,
 				DFE2078525AFECC800FB76EF /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */,
