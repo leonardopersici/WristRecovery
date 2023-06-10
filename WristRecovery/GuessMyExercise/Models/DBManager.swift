@@ -17,9 +17,9 @@ class DBManager {
         self.createTableMedici()
         self.createTablePazienti()
         self.createTableEsercizi()
-        self.insertPaziente(id: 1, username: "Paziente2", password: "0000", medico: 0)
         print(readMedici())
         print(readPazienti())
+        print(readEsercizi())
     }
     
     func createDB() -> OpaquePointer? {
@@ -70,7 +70,7 @@ class DBManager {
     }
     
     func createTableEsercizi() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Esercizi(Id INTEGER PRIMARY KEY AUTOINCREMENT,assegnatoDa INTEGER, assegnatoA INTEGER, flex INTEGER, ext INTEGER, completato INTEGER);";
+        let createTableString = "CREATE TABLE IF NOT EXISTS Esercizi(Id INTEGER PRIMARY KEY AUTOINCREMENT, assegnatoDa INTEGER, assegnatoA INTEGER, flex INTEGER, ext INTEGER, completato INTEGER);";
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -183,16 +183,16 @@ class DBManager {
         }
     }
     
-    func insertEsercizio(id:Int, assegnatoDa:String, assegnatoA:String, flex:String, ext:String, completato:Int) {
+    func insertEsercizio(id:Int, assegnatoDa:Int, assegnatoA:Int, flex:Int, ext:Int, completato:Int) {
         if(readEsercizi().isEmpty){
             let insertStatementString = "INSERT INTO Esercizi (Id, assegnatoDa, assegnatoA, flex, ext, completato) VALUES (?, ?, ?, ?, ?, ?);"
             var insertStatement: OpaquePointer? = nil
            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
                sqlite3_bind_int(insertStatement, 1, 0)
-               sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa)!)
-               sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA)!)
-               sqlite3_bind_int(insertStatement, 4, Int32(flex)!)
-               sqlite3_bind_int(insertStatement, 5, Int32(ext)!)
+               sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa))
+               sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA))
+               sqlite3_bind_int(insertStatement, 4, Int32(flex))
+               sqlite3_bind_int(insertStatement, 5, Int32(ext))
                sqlite3_bind_int(insertStatement, 6, Int32(completato))
                  
                if sqlite3_step(insertStatement) == SQLITE_DONE {
@@ -211,10 +211,10 @@ class DBManager {
                     var insertStatement: OpaquePointer? = nil
                    if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
                        sqlite3_bind_int(insertStatement, 1, Int32(id))
-                       sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa)!)
-                       sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA)!)
-                       sqlite3_bind_int(insertStatement, 4, Int32(flex)!)
-                       sqlite3_bind_int(insertStatement, 5, Int32(ext)!)
+                       sqlite3_bind_int(insertStatement, 2, Int32(assegnatoDa))
+                       sqlite3_bind_int(insertStatement, 3, Int32(assegnatoA))
+                       sqlite3_bind_int(insertStatement, 4, Int32(flex))
+                       sqlite3_bind_int(insertStatement, 5, Int32(ext))
                        sqlite3_bind_int(insertStatement, 6, Int32(completato))
                          
                        if sqlite3_step(insertStatement) == SQLITE_DONE {

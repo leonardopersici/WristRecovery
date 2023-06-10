@@ -821,35 +821,130 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hAV-PP-l4g">
-                                <rect key="frame" x="16" y="50" width="343" height="728"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="98" width="343" height="680"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="separatorColor" systemColor="separatorColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="secondarySystemFillColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellPaziente" id="YZd-1y-NAp">
-                                        <rect key="frame" x="0.0" y="50" width="343" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="cellPaziente" rowHeight="100" id="YZd-1y-NAp" customClass="MedicoTableViewCell" customModule="WristRecovery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZd-1y-NAp" id="42w-Tg-UAZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666667938232422"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YZd-1y-NAp" id="42w-Tg-UAZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Paziente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo2-kc-VNW" userLabel="PazienteLabel">
+                                                    <rect key="frame" x="77" y="16" width="189" height="68"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="centerY" secondItem="42w-Tg-UAZ" secondAttribute="centerY" id="IF7-lP-bDi"/>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="top" secondItem="42w-Tg-UAZ" secondAttribute="topMargin" constant="5" id="fIi-td-swJ"/>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="centerX" secondItem="42w-Tg-UAZ" secondAttribute="centerX" id="lN4-qJ-Qj8"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                        <connections>
+                                            <outlet property="pazienteLabel" destination="mo2-kc-VNW" id="wpI-5e-gSG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAZIENTI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWN-DG-rM9">
+                                <rect key="frame" x="62" y="50" width="251" height="40"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="eFr-Hz-qPD" secondAttribute="bottom" id="Ac5-Tx-WrE"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="dWN-DG-rM9" secondAttribute="bottom" constant="8" symbolic="YES" id="6mD-os-nT9"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="eFr-Hz-qPD" secondAttribute="bottom" constant="48" id="Ac5-Tx-WrE"/>
                             <constraint firstItem="hAV-PP-l4g" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leadingMargin" id="FfM-Wg-mGB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hAV-PP-l4g" secondAttribute="trailing" id="GuV-Y5-mbK"/>
                             <constraint firstItem="lsn-Bw-Qdw" firstAttribute="top" secondItem="hAV-PP-l4g" secondAttribute="bottom" id="MJI-0T-fqP"/>
+                            <constraint firstItem="dWN-DG-rM9" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leadingMargin" constant="46" id="azn-9W-Gnd"/>
+                            <constraint firstItem="dWN-DG-rM9" firstAttribute="centerX" secondItem="hAV-PP-l4g" secondAttribute="centerX" id="j6D-ue-tdg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="hAV-PP-l4g" id="SY4-5R-Ync"/>
+                        <outlet property="tableView" destination="hAV-PP-l4g" id="4Cd-dj-Vh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQU-XV-S7t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="-137"/>
+            <point key="canvasLocation" x="-236" y="-554"/>
+        </scene>
+        <!--Paziente View Controller-->
+        <scene sceneID="qsk-Th-Rap">
+            <objects>
+                <viewController storyboardIdentifier="PazienteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ymf-tQ-1x8" userLabel="Paziente View Controller" customClass="PazienteViewController" customModule="WristRecovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6D-BL-CRg"/>
+                        <viewControllerLayoutGuide type="bottom" id="eCx-DN-2NZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BFd-px-FVO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h7O-sz-w9R">
+                                <rect key="frame" x="16" y="98" width="343" height="680"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="separatorColor" systemColor="separatorColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="secondarySystemFillColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="cellEsercizio" rowHeight="100" id="Y4H-Lk-LZJ" customClass="EsercizioTableViewCell" customModule="WristRecovery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="343" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y4H-Lk-LZJ" id="K1b-UE-bfo">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-TK-12N" userLabel="EsercizioLabel">
+                                                    <rect key="frame" x="113.33333333333331" y="16" width="116.66666666666669" height="68"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="5" id="0jU-MC-5ya"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerX" secondItem="K1b-UE-bfo" secondAttribute="centerX" id="i8C-Sw-I5C"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="K1b-UE-bfo" secondAttribute="centerY" id="wQF-E6-lw8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                        <connections>
+                                            <outlet property="esercizioLabel" destination="Rdu-TK-12N" id="qEe-Mn-JR3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESERCIZI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4D-ic-Tc6">
+                                <rect key="frame" x="62" y="50" width="251" height="40"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eCx-DN-2NZ" firstAttribute="top" secondItem="h7O-sz-w9R" secondAttribute="bottom" id="1N5-HF-VvS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h7O-sz-w9R" secondAttribute="trailing" id="3Oi-9v-Tam"/>
+                            <constraint firstItem="y4D-ic-Tc6" firstAttribute="centerX" secondItem="h7O-sz-w9R" secondAttribute="centerX" id="9f8-MJ-cm5"/>
+                            <constraint firstItem="h7O-sz-w9R" firstAttribute="top" secondItem="y4D-ic-Tc6" secondAttribute="bottom" constant="8" symbolic="YES" id="9vt-Bt-vEW"/>
+                            <constraint firstItem="h7O-sz-w9R" firstAttribute="top" secondItem="j6D-BL-CRg" secondAttribute="bottom" constant="48" id="GNc-VZ-DHg"/>
+                            <constraint firstItem="h7O-sz-w9R" firstAttribute="leading" secondItem="BFd-px-FVO" secondAttribute="leadingMargin" id="kW7-Og-iej"/>
+                            <constraint firstItem="y4D-ic-Tc6" firstAttribute="leading" secondItem="BFd-px-FVO" secondAttribute="leadingMargin" constant="46" id="qG5-vD-fZc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="h7O-sz-w9R" id="PW7-eN-mST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePx-Cu-YYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="142"/>
         </scene>
     </scenes>
     <resources>

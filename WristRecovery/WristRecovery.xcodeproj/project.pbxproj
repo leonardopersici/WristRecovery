@@ -43,6 +43,7 @@
 		E3D0AFBE2901B1D100BC6FD7 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */; };
 		E3DC842728E58CF80035CCC3 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DC842628E58CF80035CCC3 /* SpeechService.swift */; };
 		E3EE6C792A31DFA300CB9D18 /* MedicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */; };
+		E3F7C38F2A33677F0056E26B /* PazienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F7C38E2A33677F0056E26B /* PazienteViewController.swift */; };
 		FADD45BD24D55CE200955140 /* AVCaptureDevice+FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD45BC24D55CE200955140 /* AVCaptureDevice+FrameRate.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		E3DC842628E58CF80035CCC3 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicoViewController.swift; sourceTree = "<group>"; };
+		E3F7C38E2A33677F0056E26B /* PazienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PazienteViewController.swift; sourceTree = "<group>"; };
 		FADD45BC24D55CE200955140 /* AVCaptureDevice+FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+FrameRate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				E3D0AFBD2901B1D100BC6FD7 /* CreditsViewController.swift */,
 				E39A648A2A2B2C4B00217BB0 /* LoginViewController.swift */,
 				E3EE6C782A31DFA300CB9D18 /* MedicoViewController.swift */,
+				E3F7C38E2A33677F0056E26B /* PazienteViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				E39F611D28E36C9100825717 /* StartViewController.swift in Sources */,
 				E3DC842728E58CF80035CCC3 /* SpeechService.swift in Sources */,
 				E3EE6C792A31DFA300CB9D18 /* MedicoViewController.swift in Sources */,
+				E3F7C38F2A33677F0056E26B /* PazienteViewController.swift in Sources */,
 				DFF8422E25CC7E9000DC36E5 /* ExerciseClassifier+Singleton.swift in Sources */,
 				E3D0AFBC2901B1BF00BC6FD7 /* TutorialViewController.swift in Sources */,
 				DFE2078525AFECC800FB76EF /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */,

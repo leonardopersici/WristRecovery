@@ -11,8 +11,6 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let db = DBManager()
-    var username = ""
-    var password = ""
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!    
@@ -28,14 +26,13 @@ class LoginViewController: UIViewController {
         testLabel.addGestureRecognizer(tap)
     }
     @IBAction func onAccediButtonTapped(_ sender: Any) {
-        username = usernameField.text!
-        password = passwordField.text!
         let medici = self.db.readMedici()
         let pazienti = self.db.readPazienti()
+        let esercizi = self.db.readEsercizi()
         var login = false
         
         for m in medici {
-            if (username == m.username && password == m.password){
+            if (usernameField.text == m.username && passwordField.text == m.password){
                 print("CREDENZIALI CORRETTE M")
                 let main = UIStoryboard(name: "Main", bundle: nil)
 
@@ -45,13 +42,14 @@ class LoginViewController: UIViewController {
 
                 // Cast it as a `MedicoViewController`.
                 guard let medicoVC = viewController as? MedicoViewController else {
-                    fatalError("Couldn't cast the Login View Controller.")
+                    fatalError("Couldn't cast the Medico View Controller.")
                 }
+                
+                let medico = m
                 
                 medicoVC.medici = medici
                 medicoVC.pazienti = pazienti
-                medicoVC.username = username
-                medicoVC.password = password
+                medicoVC.medico = medico
                 
                 // Define the presentation style for the main view.
                 modalPresentationStyle = .popover
@@ -67,8 +65,39 @@ class LoginViewController: UIViewController {
         }
         if (login == false){
             for p in pazienti {
-                if (username == p.username && password == p.password){
+                if (usernameField.text == p.username && passwordField.text == p.password){
                     print("CREDENZIALI CORRETTE P")
+                    let main = UIStoryboard(name: "Main", bundle: nil)
+
+                    // Get the view controller based on its name.
+                    let vcName = "PazienteViewController"
+                    let viewController = main.instantiateViewController(identifier: vcName)
+
+                    // Cast it as a `PazienteViewController`.
+                    guard let pazienteVC = viewController as? PazienteViewController else {
+                        fatalError("Couldn't cast the Paziente View Controller.")
+                    }
+                    
+                    let paziente = p
+                    var eserciziPaziente = [Esercizio]()
+                    
+                    for e in esercizi {
+                        if (e.assegnatoA == p.id){
+                            eserciziPaziente.append(e)
+                        }
+                    }
+                    
+                    pazienteVC.medici = medici
+                    pazienteVC.pazienti = pazienti
+                    pazienteVC.eserciziPaziente = eserciziPaziente
+                    pazienteVC.paziente = paziente
+                    
+                    // Define the presentation style for the main view.
+                    modalPresentationStyle = .popover
+                    modalTransitionStyle = .coverVertical
+                    
+                    // Present the paziente view to the user.
+                    present(pazienteVC, animated: true)
                     break
                 } else {
                     print("CREDENZIALI ERRATE P")

@@ -24,9 +24,9 @@ class Paziente {
 
 class Esercizio {
     var id : Int = 0
-    var assegnatoDa : Int?
-    var assegnatoA : Int?
-    var flex : Int?
-    var ext : Int?
+    var assegnatoDa : Int = 0
+    var assegnatoA : Int = 0
+    var flex : Int = 0
+    var ext : Int = 0
     var completato : Int = 0
 }

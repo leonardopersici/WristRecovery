@@ -14,51 +14,49 @@ class MedicoViewController: UIViewController {
     
     var medici = [Medico]()
     var pazienti = [Paziente]()
-    var username = ""
-    var password = ""
-    
-    let names = [
-        "Mallio Ciao",
-        "Billy Balla",
-        "Ballo Billy",
-    ]
+    var medico = Medico()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(medico.username)
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.reloadData()
     }
 }
 
 extension MedicoViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("you tapped me")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("you tapped ")
     }
 }
 
 extension MedicoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        for m in medici{
-            if(m.username == username){
-                return m.pazienti!.count
-            }
-        }
-        return 0
+        return medico.pazienti!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellPaziente", for: indexPath)
-        var nomi = [String]()
-        for m in medici{
-            if(m.username == username){
-                var ids = m.pazienti!
-                for p in pazienti {
-                    nomi.append(p.username)
+        guard let pazienteCell = cell as? MedicoTableViewCell else {
+            fatalError("Not an isntance of 'MedicoViewController'.")}
+        var nomiPazienti = [String]()
+        for i in medico.pazienti! {
+            for np in pazienti {
+                if (i == np.id){
+                    nomiPazienti.append(np.username)
                 }
             }
         }
-        cell.textLabel?.text = nomi[indexPath.row]
-        return cell
+        
+        pazienteCell.pazienteLabel.text = nomiPazienti[indexPath.row]
+        return pazienteCell
     }
+}
+
+class MedicoTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var pazienteLabel: UILabel!
 }
