@@ -82,7 +82,11 @@ class MainViewController: UIViewController {
     
     var meanConfidence = [Double]()
     
-    let db = DBManager()
+    var esercizio = Esercizio()
+    
+    var completo = false
+    
+    var db = DBManager()
 }
 
 // MARK: - View Controller Events
@@ -90,6 +94,7 @@ extension MainViewController {
     /// Configures the main view after it loads.
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Esercizio \(esercizio.id) con \(esercizio.flex) flessioni e \(esercizio.ext) estensioni")
 
         // Disable the idle timer to prevent the screen from locking.
         UIApplication.shared.isIdleTimerDisabled = true
@@ -155,6 +160,7 @@ extension MainViewController {
         }
 
         // Copy the current actions times to the summary view.
+        summaryVC.completo = completo
         summaryVC.actionFrameCounts = actionFrameCounts
 
         // Define the presentation style for the summary view.
@@ -274,12 +280,22 @@ extension MainViewController {
             DispatchQueue.main.async {
                 self.flexReps.text = " " + String (totalReps) + " "
             }
+            if(totalReps == esercizio.flex && actionRepCounts["Estensione"] == esercizio.ext){
+                completo = true
+                db.updateEsercizio(id: esercizio.id)
+                self.onSummaryButtonTapped()
+            }
         } else if (actionLabel == "Estensione"){
             DispatchQueue.main.async {
                 self.extReps.text = " " + String (totalReps) + " "
             }
+            if(totalReps == esercizio.ext && actionRepCounts["Flessione"] == esercizio.flex){
+                completo = true
+                db.updateEsercizio(id: esercizio.id)
+                self.onSummaryButtonTapped()
+            }
         }
-        
+        /*
         //LIV1 - LIV2 - LIV3 TEST COMMIT
         if(livCount == 4){
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
@@ -311,7 +327,7 @@ extension MainViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 self.onSummaryButtonTapped()
             }
-        }
+        }*/
     }
 
     /// Updates the user interface's labels with the prediction and its

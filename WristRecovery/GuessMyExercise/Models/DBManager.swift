@@ -364,4 +364,16 @@ class DBManager {
             }
         }
     }
+    
+    func updateEsercizio(id : Int) {
+        let query = "UPDATE Esercizi SET completato = 1 WHERE id = \(id);"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Esercizio \(id) updated success")
+            }else {
+                print("Esercizio \(id) is not updated in table")
+            }
+        }
+    }
 }

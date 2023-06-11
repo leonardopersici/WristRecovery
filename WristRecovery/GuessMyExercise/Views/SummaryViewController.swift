@@ -11,14 +11,10 @@ import UIKit
 class SummaryViewController: UIViewController {
     /// The summary view controller's primary view.
     @IBOutlet weak var tableView: UITableView!
-
-    @IBOutlet weak var stackLivRes: UIStackView!
     
-    @IBOutlet weak var labelLiv1Res: UILabel!
+    @IBOutlet weak var endView: UIView!
     
-    @IBOutlet weak var labelLiv2Res: UILabel!
-    
-    @IBOutlet weak var labelLiv3Res: UILabel!
+    var completo: Bool?
     
     /// The list of actions, sorted by descending time.
     private var sortedActions = [String]()
@@ -36,14 +32,16 @@ class SummaryViewController: UIViewController {
             sortedElements.forEach { entry in sortedActions.append(entry.key) }
         }
     }
-    
-    var score = 0.0
 
     /// A closure the summary view controller calls after it disappears.
     var dismissalClosure: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(completo!){
+            endView.isHidden = false
+        }
 
         view?.overrideUserInterfaceStyle = .dark
 
@@ -57,6 +55,9 @@ class SummaryViewController: UIViewController {
 
         // Call the super class last.
         super.viewDidDisappear(animated)
+    }
+    @IBAction func OnTappedAltriEsercizi(_ sender: Any) {
+        viewDidDisappear(true)
     }
 }
 
@@ -84,30 +85,9 @@ extension SummaryViewController: UITableViewDataSource {
             let action = sortedActions[indexPath.row]
             let totalFrames = frameCounts[action] ?? 0
             let totalDuration = (Double(totalFrames)) / frameRate
-            
-            score = score + totalDuration
 
             summaryCell.totalDuration = totalDuration
             summaryCell.actionLabel.text = action
-        }
-        
-        print("PUNTEGGIO \(score)")
-
-        
-        if(score >= 8){
-            stackLivRes.isHidden = false
-            labelLiv1Res.isHidden = false
-        }
-        if(score >= 12){
-            stackLivRes.isHidden = false
-            labelLiv1Res.isHidden = false
-            labelLiv2Res.isHidden = false
-        }
-        if(score >= 16){
-            stackLivRes.isHidden = false
-            labelLiv1Res.isHidden = false
-            labelLiv2Res.isHidden = false
-            labelLiv3Res.isHidden = false
         }
         
         return summaryCell

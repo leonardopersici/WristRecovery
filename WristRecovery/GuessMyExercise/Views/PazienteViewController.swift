@@ -20,8 +20,6 @@ class PazienteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("TABLEVIEW: \(tableView)")
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -32,6 +30,26 @@ class PazienteViewController: UIViewController {
 extension PazienteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped \(indexPath.row)")
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+
+        // Get the view controller based on its name.
+        let vcName = "MainViewController"
+        let viewController = main.instantiateViewController(identifier: vcName)
+
+        // Cast it as a `MedicoViewController`.
+        guard let mainVC = viewController as? MainViewController else {
+            fatalError("Couldn't cast the Main View Controller.")
+        }
+        
+        mainVC.esercizio = eserciziPaziente[indexPath.row]
+        
+        // Define the presentation style for the main view.
+        modalPresentationStyle = .popover
+        modalTransitionStyle = .coverVertical
+        
+        // Present the main view to the user.
+        present(mainVC, animated: true)
     }
 }
 
@@ -45,6 +63,9 @@ extension PazienteViewController: UITableViewDataSource {
         guard let esercizioCell = cell as? EsercizioTableViewCell else {
             fatalError("Not an isntance of 'PazienteViewController'.")}
         
+        if(eserciziPaziente[indexPath.row].completato == 1){
+            esercizioCell.esercizioLabel.backgroundColor = UIColor.green
+        }
         esercizioCell.esercizioLabel.text = "Esercizio \(eserciziPaziente[indexPath.row].id)"
         return esercizioCell
     }

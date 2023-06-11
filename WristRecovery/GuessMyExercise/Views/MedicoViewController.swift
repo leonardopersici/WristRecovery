@@ -18,8 +18,6 @@ class MedicoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(medico.username)
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,7 +27,7 @@ class MedicoViewController: UIViewController {
 
 extension MedicoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped ")
+        print("you tapped \(indexPath.row)")
     }
 }
 
@@ -58,5 +56,11 @@ extension MedicoViewController: UITableViewDataSource {
 
 class MedicoTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var pazienteLabel: UILabel!
+    
+    @IBAction func OnPlusButtonTapped(_ sender: Any) {
+        print("bottone schiacciato")
+    }
+    
 }
