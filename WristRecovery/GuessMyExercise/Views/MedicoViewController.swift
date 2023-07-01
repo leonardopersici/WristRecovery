@@ -28,6 +28,29 @@ class MedicoViewController: UIViewController {
 extension MedicoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped \(indexPath.row)")
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+
+        // Get the view controller based on its name.
+        let vcName = "EserciziPazienteViewController"
+        let viewController = main.instantiateViewController(identifier: vcName)
+
+        // Cast it as a `PazienteViewController`.
+        guard let eserciziPazienteVC = viewController as? EserciziPazienteViewController else {
+            fatalError("Couldn't cast the EserciziPaziente View Controller.")
+        }
+        
+        let paziente = pazienti[indexPath.row]
+        
+        eserciziPazienteVC.medico = medico
+        eserciziPazienteVC.paziente = paziente
+        
+        // Define the presentation style for the main view.
+        modalPresentationStyle = .popover
+        modalTransitionStyle = .coverVertical
+        
+        // Present the paziente view to the user.
+        present(eserciziPazienteVC, animated: true)
     }
 }
 

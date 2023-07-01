@@ -385,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="-137"/>
+            <point key="canvasLocation" x="534" y="142"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="R0o-Ga-Jsh">
@@ -494,10 +494,10 @@
                         <constraints>
                             <constraint firstItem="FC6-n8-4tm" firstAttribute="leading" secondItem="Znf-Jh-SDj" secondAttribute="leading" constant="62" id="4WC-Wb-yXs"/>
                             <constraint firstItem="Znf-Jh-SDj" firstAttribute="trailing" secondItem="FC6-n8-4tm" secondAttribute="trailing" constant="62" id="5SF-oM-5Ji"/>
-                            <constraint firstItem="UYv-b2-rgK" firstAttribute="bottom" secondItem="Ejg-ot-373" secondAttribute="top" id="DNm-Lw-s28"/>
                             <constraint firstItem="k8c-rX-gWH" firstAttribute="top" secondItem="FC6-n8-4tm" secondAttribute="bottom" constant="23" id="Esb-QJ-CIg"/>
                             <constraint firstItem="UYv-b2-rgK" firstAttribute="top" secondItem="hWJ-z1-WE2" secondAttribute="top" constant="374" id="JGt-yq-3U9"/>
                             <constraint firstItem="UYv-b2-rgK" firstAttribute="trailing" secondItem="k8c-rX-gWH" secondAttribute="trailing" id="Mj5-mg-XRD"/>
+                            <constraint firstItem="UYv-b2-rgK" firstAttribute="bottom" secondItem="Ejg-ot-373" secondAttribute="top" id="NqC-Lv-Be2"/>
                             <constraint firstItem="k8c-rX-gWH" firstAttribute="leading" secondItem="Znf-Jh-SDj" secondAttribute="leading" id="Wee-Yy-ldN"/>
                             <constraint firstItem="k8c-rX-gWH" firstAttribute="top" secondItem="Znf-Jh-SDj" secondAttribute="top" constant="80" id="Wt2-0p-Weh"/>
                             <constraint firstItem="k8c-rX-gWH" firstAttribute="trailing" secondItem="Znf-Jh-SDj" secondAttribute="trailing" id="YMR-5O-sEu"/>
@@ -513,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCP-gV-atj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="-137.4384236453202"/>
+            <point key="canvasLocation" x="1329" y="142"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="mvf-cV-15P">
@@ -756,33 +756,16 @@
                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeB-xU-3Rf">
-                                                    <rect key="frame" x="292" y="35" width="31" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
-                                                        <attributedString key="attributedTitle"/>
-                                                        <color key="baseForegroundColor" systemColor="systemGreenColor"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="OnPlusButtonTapped:" destination="YZd-1y-NAp" eventType="touchUpInside" id="S2P-dj-AUy"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="QeB-xU-3Rf" firstAttribute="trailing" secondItem="42w-Tg-UAZ" secondAttribute="trailingMargin" id="AQ0-jS-Ril"/>
                                                 <constraint firstItem="mo2-kc-VNW" firstAttribute="centerY" secondItem="42w-Tg-UAZ" secondAttribute="centerY" id="IF7-lP-bDi"/>
                                                 <constraint firstItem="mo2-kc-VNW" firstAttribute="top" secondItem="42w-Tg-UAZ" secondAttribute="topMargin" constant="5" id="fIi-td-swJ"/>
                                                 <constraint firstItem="mo2-kc-VNW" firstAttribute="centerX" secondItem="42w-Tg-UAZ" secondAttribute="centerX" constant="-57" id="lN4-qJ-Qj8"/>
-                                                <constraint firstItem="QeB-xU-3Rf" firstAttribute="top" secondItem="42w-Tg-UAZ" secondAttribute="topMargin" constant="24" id="oHp-S6-3Ch"/>
-                                                <constraint firstItem="QeB-xU-3Rf" firstAttribute="leading" secondItem="mo2-kc-VNW" secondAttribute="trailing" constant="83" id="uAa-DV-spX"/>
-                                                <constraint firstItem="QeB-xU-3Rf" firstAttribute="centerY" secondItem="mo2-kc-VNW" secondAttribute="centerY" id="xWO-hv-gSo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                         <connections>
                                             <outlet property="pazienteLabel" destination="mo2-kc-VNW" id="wpI-5e-gSG"/>
-                                            <outlet property="plusButton" destination="QeB-xU-3Rf" id="nwA-Ey-Aot"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -811,6 +794,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQU-XV-S7t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-236" y="-554.18719211822668"/>
+        </scene>
+        <!--PopUp Esercizio View Controller-->
+        <scene sceneID="dLk-6A-Ayh">
+            <objects>
+                <viewController storyboardIdentifier="PopUpEsercizioViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OZa-7a-Pny" userLabel="PopUp Esercizio View Controller" customClass="PopUpEsercizioViewController" customModule="WristRecovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pyB-Vx-01E"/>
+                        <viewControllerLayoutGuide type="bottom" id="TOR-pY-4Z0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gCd-bY-nh0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-TK-CHo">
+                                <rect key="frame" x="48" y="204" width="278" height="395"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESERCIZIO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnJ-VA-rK4">
+                                        <rect key="frame" x="45" y="8" width="188" height="40"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLESSIONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-JA-l7l">
+                                        <rect key="frame" x="8" y="89" width="144" height="29"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UqW-6R-nKB">
+                                        <rect key="frame" x="216" y="84" width="54" height="39"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESTENSIONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-MO-Pcv">
+                                        <rect key="frame" x="8" y="149" width="165" height="29"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-mu-aIe">
+                                        <rect key="frame" x="216" y="144" width="54" height="39"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-oM-RET">
+                                        <rect key="frame" x="39" y="203" width="200" height="49"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="tintColor" systemColor="systemGray6Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="CONFERMA">
+                                                    <attributes>
+                                                        <font key="NSFont" size="30" name="ArialRoundedMTBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="OnAssegnaEsercizioButtonTapped:" destination="zba-fM-ABe" eventType="touchUpInside" id="UKa-nm-UCU"/>
+                                            <action selector="OnConfermaButtonTapped:" destination="OZa-7a-Pny" eventType="touchUpInside" id="CGO-dM-b9Q"/>
+                                            <action selector="onAccediButtonTapped:" destination="JqD-vm-zb2" eventType="touchUpInside" id="yfh-5b-tYZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstItem="seZ-mu-aIe" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="trailing" constant="43" id="63F-Bm-GHp"/>
+                                    <constraint firstItem="HnJ-VA-rK4" firstAttribute="centerX" secondItem="Pms-oM-RET" secondAttribute="centerX" id="LYQ-1o-B8g"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="trailing" secondItem="seZ-mu-aIe" secondAttribute="trailing" id="My2-3g-Qew"/>
+                                    <constraint firstItem="B8A-JA-l7l" firstAttribute="centerY" secondItem="UqW-6R-nKB" secondAttribute="centerY" id="QoP-Ny-qoy"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="trailing" secondItem="wUh-TK-CHo" secondAttribute="trailingMargin" id="RgA-eS-Oqz"/>
+                                    <constraint firstItem="HnJ-VA-rK4" firstAttribute="top" secondItem="wUh-TK-CHo" secondAttribute="topMargin" id="Tgc-cO-7tU"/>
+                                    <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="leading" id="b3t-h6-d3N"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="top" secondItem="HnJ-VA-rK4" secondAttribute="bottom" constant="36" id="br7-06-RfZ"/>
+                                    <constraint firstItem="ZbB-MO-Pcv" firstAttribute="centerY" secondItem="seZ-mu-aIe" secondAttribute="centerY" id="eGP-1U-amJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pms-oM-RET" secondAttribute="bottom" constant="143" id="f5j-Ky-45Z"/>
+                                    <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leadingMargin" id="gCv-iV-5MC"/>
+                                    <constraint firstItem="Pms-oM-RET" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="39" id="lBd-0E-kA3"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="seZ-mu-aIe" secondAttribute="leading" id="lJ8-J0-XvF"/>
+                                    <constraint firstItem="seZ-mu-aIe" firstAttribute="top" secondItem="UqW-6R-nKB" secondAttribute="bottom" constant="21" id="y8U-Jo-U4g"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wUh-TK-CHo" firstAttribute="top" secondItem="pyB-Vx-01E" secondAttribute="bottom" constant="154" id="AAI-Cs-ZiO"/>
+                            <constraint firstItem="wUh-TK-CHo" firstAttribute="centerY" secondItem="gCd-bY-nh0" secondAttribute="centerY" constant="-4.5" id="SqK-RD-bcE"/>
+                            <constraint firstItem="wUh-TK-CHo" firstAttribute="trailing" secondItem="gCd-bY-nh0" secondAttribute="trailingMargin" constant="-33" id="lFT-RG-MZf"/>
+                            <constraint firstItem="wUh-TK-CHo" firstAttribute="leading" secondItem="gCd-bY-nh0" secondAttribute="leadingMargin" constant="32" id="rIH-vM-niM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="txw-Ad-juw"/>
+                    <connections>
+                        <outlet property="extField" destination="seZ-mu-aIe" id="5j1-E7-JHs"/>
+                        <outlet property="flexField" destination="UqW-6R-nKB" id="WmG-0k-i0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="weS-Zm-QzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533.60000000000002" y="-1061.0837438423646"/>
         </scene>
         <!--Paziente View Controller-->
         <scene sceneID="qsk-Th-Rap">
@@ -881,6 +970,104 @@
             </objects>
             <point key="canvasLocation" x="-236" y="142"/>
         </scene>
+        <!--EserciziPaziente View Controller-->
+        <scene sceneID="dRw-jy-ARv">
+            <objects>
+                <viewController storyboardIdentifier="EserciziPazienteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zba-fM-ABe" userLabel="EserciziPaziente View Controller" customClass="EserciziPazienteViewController" customModule="WristRecovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="apT-Kk-BiN"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Md-hn-xOU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CNn-iN-ivq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BSR-Wg-dK6">
+                                <rect key="frame" x="16" y="183" width="343" height="563"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="separatorColor" systemColor="separatorColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="secondarySystemFillColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="cellEsercizioPaziente" rowHeight="100" id="mEX-wX-egD" customClass="EsercizioTableViewCell" customModule="WristRecovery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="343" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mEX-wX-egD" id="yCg-Go-bVu">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQG-1l-mZE" userLabel="EsercizioPazienteLabel">
+                                                    <rect key="frame" x="20.000000000000007" y="16" width="116.66666666666669" height="68"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MQG-1l-mZE" firstAttribute="centerY" secondItem="yCg-Go-bVu" secondAttribute="centerY" id="KAn-ct-Sdz"/>
+                                                <constraint firstItem="MQG-1l-mZE" firstAttribute="leading" secondItem="yCg-Go-bVu" secondAttribute="leadingMargin" id="y4g-1W-9pP"/>
+                                                <constraint firstItem="MQG-1l-mZE" firstAttribute="top" secondItem="yCg-Go-bVu" secondAttribute="topMargin" constant="5" id="yOh-9l-EhO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                        <connections>
+                                            <outlet property="esercizioLabel" destination="MQG-1l-mZE" id="DhN-vN-IHu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NOME PAZIENTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlj-k2-GSQ">
+                                <rect key="frame" x="46" y="50" width="282" height="40"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9S-iM-pda">
+                                <rect key="frame" x="88" y="110" width="199" height="49"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+ ASSEGNA">
+                                            <attributes>
+                                                <font key="NSFont" size="30" name="ArialRoundedMTBold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="OnAssegnaEsercizioButtonTapped:" destination="zba-fM-ABe" eventType="touchUpInside" id="JTu-xh-mTa"/>
+                                    <action selector="onAccediButtonTapped:" destination="JqD-vm-zb2" eventType="touchUpInside" id="64B-ws-Adr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BSR-Wg-dK6" firstAttribute="top" secondItem="Z9S-iM-pda" secondAttribute="bottom" constant="24" id="3AD-3f-c2e"/>
+                            <constraint firstItem="Z9S-iM-pda" firstAttribute="centerX" secondItem="BSR-Wg-dK6" secondAttribute="centerX" id="4Ol-tP-wyh"/>
+                            <constraint firstItem="BSR-Wg-dK6" firstAttribute="trailing" secondItem="CNn-iN-ivq" secondAttribute="trailingMargin" id="Abl-CC-8k6"/>
+                            <constraint firstItem="Z9S-iM-pda" firstAttribute="top" secondItem="wlj-k2-GSQ" secondAttribute="bottom" constant="20" id="Muy-mQ-BZ9"/>
+                            <constraint firstItem="BSR-Wg-dK6" firstAttribute="leading" secondItem="CNn-iN-ivq" secondAttribute="leadingMargin" id="Y8m-i5-8N5"/>
+                            <constraint firstItem="wlj-k2-GSQ" firstAttribute="top" secondItem="apT-Kk-BiN" secondAttribute="bottom" id="dgA-ua-dSd"/>
+                            <constraint firstItem="4Md-hn-xOU" firstAttribute="top" secondItem="BSR-Wg-dK6" secondAttribute="bottom" constant="32" id="n8g-eH-TwO"/>
+                            <constraint firstItem="wlj-k2-GSQ" firstAttribute="centerX" secondItem="Z9S-iM-pda" secondAttribute="centerX" id="rc1-pH-kwg"/>
+                            <constraint firstItem="wlj-k2-GSQ" firstAttribute="leading" secondItem="CNn-iN-ivq" secondAttribute="leadingMargin" constant="30" id="wOE-5A-Lzv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="assegnaEsercizioButton" destination="Z9S-iM-pda" id="ZNb-Ss-kyC"/>
+                        <outlet property="nomePazienteLabel" destination="wlj-k2-GSQ" id="xla-Mv-5Hc"/>
+                        <outlet property="tableView" destination="BSR-Wg-dK6" id="MZi-p1-o8d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6S-01-Ymv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328.8" y="-554.18719211822668"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>
@@ -890,7 +1077,6 @@
         <image name="creditsCC.png" width="96.720001220703125" height="33.840000152587891"/>
         <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="minus" catalog="system" width="128" height="26"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="Label Stack Background">
             <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -905,6 +1091,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

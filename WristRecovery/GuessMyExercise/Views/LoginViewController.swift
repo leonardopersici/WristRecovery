@@ -89,7 +89,6 @@ class LoginViewController: UIViewController {
                     
                     pazienteVC.medici = medici
                     pazienteVC.pazienti = pazienti
-                    pazienteVC.eserciziPaziente = eserciziPaziente
                     pazienteVC.paziente = paziente
                     
                     // Define the presentation style for the main view.
