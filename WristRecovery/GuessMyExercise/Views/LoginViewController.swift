@@ -90,6 +90,7 @@ class LoginViewController: UIViewController {
                     pazienteVC.medici = medici
                     pazienteVC.pazienti = pazienti
                     pazienteVC.paziente = paziente
+                    pazienteVC.eserciziPaziente = eserciziPaziente
                     
                     // Define the presentation style for the main view.
                     modalPresentationStyle = .popover

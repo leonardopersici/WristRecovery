@@ -16,6 +16,8 @@ class EserciziPazienteViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var blurView: UIView!
+    
     let db = DBManager()
     var medico = Medico()
     var paziente = Paziente()
@@ -23,6 +25,12 @@ class EserciziPazienteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("VIEWDIDLOAD")
+        for subview in blurView.subviews {
+            if subview is UIVisualEffectView {
+                subview.removeFromSuperview()
+            }
+        }
         
         eserciziPaziente.removeAll()
         let esercizi = self.db.readEsercizi()
@@ -38,8 +46,12 @@ class EserciziPazienteViewController: UIViewController {
         tableView.reloadData()
     }
     
-    
     @IBAction func OnAssegnaEsercizioButtonTapped(_ sender: Any) {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurView.bounds
+        blurView.addSubview(blurEffectView)
         
         let main = UIStoryboard(name: "Main", bundle: nil)
 
@@ -82,18 +94,15 @@ extension EserciziPazienteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEsercizioPaziente", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEsercizio", for: indexPath)
         guard let esercizioCell = cell as? EsercizioTableViewCell else {
-            fatalError("Not an isntance of 'EserciziPazienteViewController'.")}
+            fatalError("Not an isntance of 'EsercizioPazienteViewController'.")}
         
         if(eserciziPaziente[indexPath.row].completato == 1){
-            esercizioCell.backgroundColor = UIColor.green
+            esercizioCell.doneIcon.isHidden = false
+            esercizioCell.todoIcon.isHidden = true
         }
-        esercizioCell.esercizioLabel.text = "Esercizio \(eserciziPaziente[indexPath.row].id)"
+        esercizioCell.esercizioLabel.text = "Esercizio \(indexPath.row + 1)"
         return esercizioCell
     }
-}
-
-class EserciziPazienteTableViewCell: UITableViewCell {
-    
 }

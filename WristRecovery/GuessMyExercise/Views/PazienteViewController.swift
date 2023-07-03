@@ -12,6 +12,7 @@ class PazienteViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let db = DBManager()
     var medici = [Medico]()
     var pazienti = [Paziente]()
     var eserciziPaziente = [Esercizio]()
@@ -64,15 +65,18 @@ extension PazienteViewController: UITableViewDataSource {
             fatalError("Not an isntance of 'PazienteViewController'.")}
         
         if(eserciziPaziente[indexPath.row].completato == 1){
-            esercizioCell.esercizioLabel.backgroundColor = UIColor.green
+            esercizioCell.doneIcon.isHidden = false
+            esercizioCell.todoIcon.isHidden = true
         }
-        esercizioCell.esercizioLabel.text = "Esercizio \(eserciziPaziente[indexPath.row].id)"
+        esercizioCell.esercizioLabel.text = "Esercizio \(indexPath.row + 1)"
         return esercizioCell
     }
 }
 
 class EsercizioTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var todoIcon: UIImageView!
+    @IBOutlet weak var doneIcon: UIImageView!
     @IBOutlet weak var esercizioLabel: UILabel!
 }
 
