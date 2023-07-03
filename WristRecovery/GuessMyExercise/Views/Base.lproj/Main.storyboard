@@ -941,22 +941,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-TK-12N" userLabel="EsercizioLabel">
-                                                    <rect key="frame" x="20.000000000000007" y="16" width="116.66666666666669" height="68"/>
-                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YIV-PG-apc" userLabel="doneIcon">
-                                                    <rect key="frame" x="273" y="30" width="38" height="40.666666666666671"/>
+                                                    <rect key="frame" x="317" y="30" width="38" height="40.666666666666671"/>
                                                     <color key="tintColor" systemColor="systemGreenColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="38" id="F0R-rV-7Ny"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i36-Jk-MdT">
-                                                    <rect key="frame" x="273" y="29" width="38" height="42.666666666666671"/>
+                                                    <rect key="frame" x="317" y="29" width="38" height="42.666666666666671"/>
                                                     <color key="tintColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-TK-12N" userLabel="EsercizioLabel">
+                                                    <rect key="frame" x="30.333333333333336" y="16" width="116.66666666666666" height="68"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Rdu-TK-12N" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="5" id="0jU-MC-5ya"/>
@@ -964,8 +964,8 @@
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="trailing" secondItem="YIV-PG-apc" secondAttribute="trailing" id="Qja-UC-NDj"/>
                                                 <constraint firstItem="YIV-PG-apc" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="18" id="Wsu-3N-DGH"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="17" id="aFA-lY-oF1"/>
-                                                <constraint firstItem="YIV-PG-apc" firstAttribute="trailing" secondItem="K1b-UE-bfo" secondAttribute="trailingMargin" constant="-44" id="acn-h1-eOw"/>
-                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerX" secondItem="K1b-UE-bfo" secondAttribute="centerX" constant="-109.16666666666666" id="i8C-Sw-I5C"/>
+                                                <constraint firstItem="YIV-PG-apc" firstAttribute="trailing" secondItem="K1b-UE-bfo" secondAttribute="trailingMargin" id="acn-h1-eOw"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerX" secondItem="K1b-UE-bfo" secondAttribute="centerX" constant="-99" id="i8C-Sw-I5C"/>
                                                 <constraint firstItem="YIV-PG-apc" firstAttribute="centerY" secondItem="i36-Jk-MdT" secondAttribute="centerY" id="m5p-EF-U30"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="leading" secondItem="YIV-PG-apc" secondAttribute="leading" id="mgJ-vb-eo2"/>
                                                 <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="K1b-UE-bfo" secondAttribute="centerY" id="wQF-E6-lw8"/>
@@ -1032,7 +1032,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF6-v8-EJw" userLabel="EsercizioLabel">
-                                                    <rect key="frame" x="36.000000000000007" y="16" width="116.66666666666669" height="68"/>
+                                                    <rect key="frame" x="30.333333333333336" y="16" width="116.66666666666666" height="68"/>
                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1050,7 +1050,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8aG-2j-k8H" firstAttribute="centerY" secondItem="dIi-wK-7GZ" secondAttribute="centerY" id="Azt-dW-95r"/>
-                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerX" secondItem="YMk-Sj-WvO" secondAttribute="centerX" constant="-93.166666666666657" id="NSz-AO-ncB"/>
+                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerX" secondItem="YMk-Sj-WvO" secondAttribute="centerX" constant="-99" id="NSz-AO-ncB"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="leading" secondItem="8aG-2j-k8H" secondAttribute="leading" id="UWt-Hr-QEA"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="trailing" secondItem="8aG-2j-k8H" secondAttribute="trailing" id="Z5d-SM-QeS"/>
                                                 <constraint firstItem="8aG-2j-k8H" firstAttribute="top" secondItem="YMk-Sj-WvO" secondAttribute="topMargin" constant="18" id="ZER-Xr-5Bl"/>
