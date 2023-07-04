@@ -46,6 +46,9 @@ class EserciziPazienteViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func OnBackButtonTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
     @IBAction func OnAssegnaEsercizioButtonTapped(_ sender: Any) {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)

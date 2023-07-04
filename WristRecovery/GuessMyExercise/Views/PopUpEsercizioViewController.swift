@@ -48,4 +48,5 @@ class PopUpEsercizioViewController: UIViewController {
     }
     @objc func tapCloseFunction(sender:UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
-    }}
+    }
+}

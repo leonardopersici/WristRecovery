@@ -15,15 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!    
     @IBOutlet weak var accediButton: UIButton!
-    @IBOutlet weak var testLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapFunction))
-        testLabel.isUserInteractionEnabled = true
-        testLabel.addGestureRecognizer(tap)
     }
     @IBAction func onAccediButtonTapped(_ sender: Any) {
         let medici = self.db.readMedici()
@@ -51,11 +44,11 @@ class LoginViewController: UIViewController {
                 medicoVC.pazienti = pazienti
                 medicoVC.medico = medico
                 
-                // Define the presentation style for the main view.
-                modalPresentationStyle = .popover
-                modalTransitionStyle = .coverVertical
+                // Define the presentation style for the login view.
+                medicoVC.modalPresentationStyle = .fullScreen
+                medicoVC.modalTransitionStyle = .coverVertical
                 
-                // Present the medico view to the user.
+                // Present the login view to the user.
                 present(medicoVC, animated: true)
                 login = true
                 break
@@ -92,11 +85,11 @@ class LoginViewController: UIViewController {
                     pazienteVC.paziente = paziente
                     pazienteVC.eserciziPaziente = eserciziPaziente
                     
-                    // Define the presentation style for the main view.
-                    modalPresentationStyle = .popover
-                    modalTransitionStyle = .coverVertical
+                    // Define the presentation style for the login view.
+                    pazienteVC.modalPresentationStyle = .fullScreen
+                    pazienteVC.modalTransitionStyle = .coverVertical
                     
-                    // Present the paziente view to the user.
+                    // Present the login view to the user.
                     present(pazienteVC, animated: true)
                     break
                 } else {
@@ -104,9 +97,5 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    }
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
-
-        print("tap working")
     }
 }

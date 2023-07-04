@@ -45,11 +45,11 @@ extension MedicoViewController: UITableViewDelegate {
         eserciziPazienteVC.medico = medico
         eserciziPazienteVC.paziente = paziente
         
-        // Define the presentation style for the main view.
-        modalPresentationStyle = .popover
-        modalTransitionStyle = .coverVertical
+        // Define the presentation style for the login view.
+        eserciziPazienteVC.modalPresentationStyle = .fullScreen
+        eserciziPazienteVC.modalTransitionStyle = .flipHorizontal
         
-        // Present the paziente view to the user.
+        // Present the login view to the user.
         present(eserciziPazienteVC, animated: true)
     }
 }
