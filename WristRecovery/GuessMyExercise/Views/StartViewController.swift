@@ -10,12 +10,19 @@ import UIKit
 
 class StartViewController: UIViewController {
     
+    @IBOutlet var blurView: UIView!
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var creditsLabel: UILabel!
     @IBOutlet weak var startIcon: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for subview in blurView.subviews {
+            if subview is UIVisualEffectView {
+                subview.removeFromSuperview()
+            }
+        }
         
         let tapTutorial = UITapGestureRecognizer(target: self, action: #selector(StartViewController.tapTutorialFunction))
         tutorialLabel.isUserInteractionEnabled = true
@@ -72,6 +79,12 @@ class StartViewController: UIViewController {
     }
     
     @objc func tapStartFunction(sender:UITapGestureRecognizer) {
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blurView.bounds
+        blurView.addSubview(blurEffectView)
+        
         let main = UIStoryboard(name: "Main", bundle: nil)
 
         // Get the view controller based on its name.
@@ -84,7 +97,7 @@ class StartViewController: UIViewController {
         }
         
         // Define the presentation style for the login view.
-        loginVC.modalPresentationStyle = .fullScreen
+        loginVC.modalPresentationStyle = .popover
         loginVC.modalTransitionStyle = .coverVertical
         
         // Present the login view to the user.

@@ -13,12 +13,27 @@ class LoginViewController: UIViewController {
     let db = DBManager()
     
     @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!    
-    @IBOutlet weak var accediButton: UIButton!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var closeButton: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapClose = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tapCloseFunction))
+        closeButton.isUserInteractionEnabled = true
+        closeButton.addGestureRecognizer(tapClose)
     }
-    @IBAction func onAccediButtonTapped(_ sender: Any) {
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if let firstVC = presentingViewController as? StartViewController {
+            DispatchQueue.main.async {
+                firstVC.viewDidLoad()
+            }
+        }
+    }
+    
+    @IBAction func OnAccediButtonTapped(_ sender: Any) {
         let medici = self.db.readMedici()
         let pazienti = self.db.readPazienti()
         let esercizi = self.db.readEsercizi()
@@ -97,5 +112,9 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func tapCloseFunction(sender:UITapGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
 }
