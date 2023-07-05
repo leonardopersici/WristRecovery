@@ -69,6 +69,8 @@ extension PazienteViewController: UITableViewDataSource {
             esercizioCell.todoIcon.isHidden = true
         }
         esercizioCell.esercizioLabel.text = "Esercizio \(indexPath.row + 1)"
+        esercizioCell.flexLabel.text = "Flessioni: \(eserciziPaziente[indexPath.row].flex)"
+        esercizioCell.extLabel.text = "Estensioni: \(eserciziPaziente[indexPath.row].ext)"
         return esercizioCell
     }
 }
@@ -78,5 +80,7 @@ class EsercizioTableViewCell: UITableViewCell {
     @IBOutlet weak var todoIcon: UIImageView!
     @IBOutlet weak var doneIcon: UIImageView!
     @IBOutlet weak var esercizioLabel: UILabel!
+    @IBOutlet weak var flexLabel: UILabel!
+    @IBOutlet weak var extLabel: UILabel!
 }
 

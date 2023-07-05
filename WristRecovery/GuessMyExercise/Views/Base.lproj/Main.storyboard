@@ -775,7 +775,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUh-TK-CHo">
                                 <rect key="frame" x="42" y="211" width="290" height="244"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Flessione" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-JA-l7l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Flessioni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-JA-l7l">
                                         <rect key="frame" x="24" y="61" width="138" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="highlightedColor"/>
@@ -788,7 +788,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Estensione" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-MO-Pcv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Estensioni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-MO-Pcv">
                                         <rect key="frame" x="24" y="125" width="138" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="highlightedColor"/>
@@ -922,31 +922,49 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                                     <color key="tintColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-TK-12N" userLabel="EsercizioLabel">
-                                                    <rect key="frame" x="30.333333333333329" y="16" width="139" height="68"/>
+                                                    <rect key="frame" x="30.333333333333329" y="11" width="147.66666666666669" height="27"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="139" id="gmj-AY-p48"/>
+                                                        <constraint firstAttribute="width" constant="147.66666666666666" id="gmj-AY-p48"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estensioni: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-aZ-o4l" userLabel="extLabel">
+                                                    <rect key="frame" x="30" y="68" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flessioni: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6S-5P-ddH" userLabel="flexLabel">
+                                                    <rect key="frame" x="30" y="46" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="B6S-5P-ddH" firstAttribute="top" secondItem="Rdu-TK-12N" secondAttribute="bottom" constant="8" symbolic="YES" id="1Ne-CL-gl5"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="trailing" secondItem="K1b-UE-bfo" secondAttribute="trailingMargin" id="5NI-9L-E5w"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="17" id="EJr-s8-gT8"/>
                                                 <constraint firstItem="Rdu-TK-12N" firstAttribute="leading" secondItem="K1b-UE-bfo" secondAttribute="leadingMargin" constant="10.333333333333329" id="Uku-7b-exn"/>
-                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" constant="5" id="cW6-F0-bUN"/>
+                                                <constraint firstItem="HOs-aZ-o4l" firstAttribute="bottom" secondItem="K1b-UE-bfo" secondAttribute="bottomMargin" id="XHg-oE-4qw"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="top" secondItem="K1b-UE-bfo" secondAttribute="topMargin" id="cW6-F0-bUN"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="trailing" secondItem="YIV-PG-apc" secondAttribute="trailing" id="hIS-Sy-boe"/>
+                                                <constraint firstItem="B6S-5P-ddH" firstAttribute="leading" secondItem="K1b-UE-bfo" secondAttribute="leadingMargin" constant="10" id="iDI-TQ-BxW"/>
                                                 <constraint firstItem="i36-Jk-MdT" firstAttribute="leading" secondItem="YIV-PG-apc" secondAttribute="leading" id="iXw-kZ-kNa"/>
-                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="K1b-UE-bfo" secondAttribute="centerY" id="mM0-dg-Cm0"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="K1b-UE-bfo" secondAttribute="centerY" constant="-25.5" id="mM0-dg-Cm0"/>
                                                 <constraint firstItem="YIV-PG-apc" firstAttribute="firstBaseline" secondItem="i36-Jk-MdT" secondAttribute="firstBaseline" id="sNa-nZ-mJS"/>
+                                                <constraint firstItem="B6S-5P-ddH" firstAttribute="leading" secondItem="HOs-aZ-o4l" secondAttribute="leading" id="uDO-by-6zX"/>
                                                 <constraint firstItem="YIV-PG-apc" firstAttribute="baseline" secondItem="i36-Jk-MdT" secondAttribute="baseline" id="whS-P9-LoF"/>
-                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="YIV-PG-apc" secondAttribute="centerY" id="zH8-G2-b4m"/>
+                                                <constraint firstItem="Rdu-TK-12N" firstAttribute="centerY" secondItem="YIV-PG-apc" secondAttribute="centerY" constant="-25.5" id="zH8-G2-b4m"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                         <connections>
                                             <outlet property="doneIcon" destination="YIV-PG-apc" id="T9T-9N-1af"/>
                                             <outlet property="esercizioLabel" destination="Rdu-TK-12N" id="qEe-Mn-JR3"/>
+                                            <outlet property="extLabel" destination="HOs-aZ-o4l" id="8GX-MQ-lWn"/>
+                                            <outlet property="flexLabel" destination="B6S-5P-ddH" id="3Ga-pe-dZU"/>
                                             <outlet property="todoIcon" destination="i36-Jk-MdT" id="Iva-G1-Nrb"/>
                                         </connections>
                                     </tableViewCell>
@@ -1015,7 +1033,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esercizio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF6-v8-EJw" userLabel="EsercizioLabel">
-                                                    <rect key="frame" x="30.333333333333329" y="16" width="153.33333333333337" height="68"/>
+                                                    <rect key="frame" x="30.333333333333329" y="11" width="147.66666666666669" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1030,25 +1048,43 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                                     <rect key="frame" x="277" y="29" width="38" height="42.666666666666671"/>
                                                     <color key="tintColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estensioni: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkH-iO-x72" userLabel="extLabel">
+                                                    <rect key="frame" x="30" y="68" width="97" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flessioni: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5M-8C-q1Q" userLabel="flexLabel">
+                                                    <rect key="frame" x="30" y="46" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8aG-2j-k8H" firstAttribute="firstBaseline" secondItem="dIi-wK-7GZ" secondAttribute="firstBaseline" id="BHV-sE-YgI"/>
-                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="top" secondItem="YMk-Sj-WvO" secondAttribute="topMargin" constant="5" id="XCF-6P-BF3"/>
+                                                <constraint firstItem="g5M-8C-q1Q" firstAttribute="leading" secondItem="PkH-iO-x72" secondAttribute="leading" id="Bgl-1m-d14"/>
+                                                <constraint firstItem="g5M-8C-q1Q" firstAttribute="top" secondItem="kF6-v8-EJw" secondAttribute="bottom" constant="8" symbolic="YES" id="V7G-1s-vEa"/>
+                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="top" secondItem="YMk-Sj-WvO" secondAttribute="topMargin" id="XCF-6P-BF3"/>
+                                                <constraint firstItem="g5M-8C-q1Q" firstAttribute="leading" secondItem="YMk-Sj-WvO" secondAttribute="leadingMargin" constant="10" id="Ysh-eH-x7C"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="trailing" secondItem="8aG-2j-k8H" secondAttribute="trailing" id="Z60-XD-Lqj"/>
                                                 <constraint firstItem="kF6-v8-EJw" firstAttribute="leading" secondItem="YMk-Sj-WvO" secondAttribute="leadingMargin" constant="10.333333333333329" id="afp-rF-Ksw"/>
-                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerY" secondItem="YMk-Sj-WvO" secondAttribute="centerY" id="b1u-it-ud1"/>
-                                                <constraint firstItem="8aG-2j-k8H" firstAttribute="leading" secondItem="kF6-v8-EJw" secondAttribute="trailing" constant="93.333333333333314" id="dY0-nd-gLA"/>
+                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerY" secondItem="YMk-Sj-WvO" secondAttribute="centerY" constant="-25.5" id="b1u-it-ud1"/>
+                                                <constraint firstItem="8aG-2j-k8H" firstAttribute="leading" secondItem="kF6-v8-EJw" secondAttribute="trailing" constant="99" id="dY0-nd-gLA"/>
+                                                <constraint firstItem="PkH-iO-x72" firstAttribute="bottom" secondItem="YMk-Sj-WvO" secondAttribute="bottomMargin" id="eIY-KG-AUz"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="leading" secondItem="8aG-2j-k8H" secondAttribute="leading" id="gw8-J9-zF8"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="top" secondItem="YMk-Sj-WvO" secondAttribute="topMargin" constant="17" id="pjV-IV-ge2"/>
                                                 <constraint firstItem="dIi-wK-7GZ" firstAttribute="trailing" secondItem="YMk-Sj-WvO" secondAttribute="trailingMargin" id="wsa-5z-fdl"/>
                                                 <constraint firstItem="8aG-2j-k8H" firstAttribute="baseline" secondItem="dIi-wK-7GZ" secondAttribute="baseline" id="x2f-6x-dg8"/>
-                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerY" secondItem="dIi-wK-7GZ" secondAttribute="centerY" id="xhc-Mh-OzH"/>
+                                                <constraint firstItem="kF6-v8-EJw" firstAttribute="centerY" secondItem="dIi-wK-7GZ" secondAttribute="centerY" constant="-25.5" id="xhc-Mh-OzH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                         <connections>
                                             <outlet property="doneIcon" destination="8aG-2j-k8H" id="dgG-aO-6Xe"/>
                                             <outlet property="esercizioLabel" destination="kF6-v8-EJw" id="lVJ-ok-lEo"/>
+                                            <outlet property="extLabel" destination="PkH-iO-x72" id="yIN-ka-rD5"/>
+                                            <outlet property="flexLabel" destination="g5M-8C-q1Q" id="NCg-it-ZJo"/>
                                             <outlet property="todoIcon" destination="dIi-wK-7GZ" id="4ju-u1-smF"/>
                                         </connections>
                                     </tableViewCell>
@@ -1102,6 +1138,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                             <constraint firstItem="Z9S-iM-pda" firstAttribute="top" secondItem="wlj-k2-GSQ" secondAttribute="bottom" constant="18" id="MiK-2f-TvV"/>
                             <constraint firstItem="OlW-SE-HSG" firstAttribute="top" secondItem="B7w-H2-h2h" secondAttribute="bottom" constant="77" id="NHb-ZR-3xY"/>
                             <constraint firstItem="wlj-k2-GSQ" firstAttribute="leading" secondItem="CNn-iN-ivq" secondAttribute="leadingMargin" constant="30" id="NlT-oW-tAk"/>
+                            <constraint firstItem="Z9S-iM-pda" firstAttribute="leading" secondItem="CNn-iN-ivq" secondAttribute="leadingMargin" constant="99.333333333333314" id="VOZ-iv-Xby"/>
                             <constraint firstItem="wlj-k2-GSQ" firstAttribute="top" secondItem="apT-Kk-BiN" secondAttribute="bottom" constant="8" symbolic="YES" id="fMS-im-GAb"/>
                             <constraint firstItem="B7w-H2-h2h" firstAttribute="top" secondItem="apT-Kk-BiN" secondAttribute="bottom" constant="5" id="hac-p5-CsC"/>
                             <constraint firstItem="Z9S-iM-pda" firstAttribute="centerX" secondItem="OlW-SE-HSG" secondAttribute="centerX" id="q0P-pZ-1wZ"/>
@@ -1120,7 +1157,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ol5-9t-u6Y"/>
+        <segue reference="t9w-2I-pH5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>

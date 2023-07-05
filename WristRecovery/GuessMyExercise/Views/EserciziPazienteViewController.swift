@@ -106,6 +106,8 @@ extension EserciziPazienteViewController: UITableViewDataSource {
             esercizioCell.todoIcon.isHidden = true
         }
         esercizioCell.esercizioLabel.text = "Esercizio \(indexPath.row + 1)"
+        esercizioCell.flexLabel.text = "Flessioni: \(eserciziPaziente[indexPath.row].flex)"
+        esercizioCell.extLabel.text = "Estensioni: \(eserciziPaziente[indexPath.row].ext)"
         return esercizioCell
     }
 }
