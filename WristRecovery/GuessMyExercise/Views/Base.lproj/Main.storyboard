@@ -387,8 +387,17 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="checklist.rtl" catalog="system" title="Esercizi">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checklist.rtl" catalog="system">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Esercizi">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" metaFont="system" size="25"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" systemColor="systemGray6Color"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -396,6 +405,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="OnEserciziTapped:" destination="ZxK-3e-9v5" eventType="touchUpInside" id="upU-ri-Lph"/>
                                             <action selector="OnTappedAltriEsercizi:" destination="ZxK-3e-9v5" eventType="touchUpInside" id="o3E-qe-qcO"/>
                                             <action selector="onAccediButtonTapped:" destination="JqD-vm-zb2" eventType="touchUpInside" id="wlv-9H-Qxf"/>
                                         </connections>
@@ -446,40 +456,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bso-od-MCZ" userLabel="backButton">
-                                <rect key="frame" x="22" y="108" width="40" height="34.333333333333343"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3M-TT-W9s" userLabel="backButton">
+                                <rect key="frame" x="16" y="55" width="40" height="35"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="15g-hD-WgS" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="hU9-vG-0om"/>
+                                    <segue destination="15g-hD-WgS" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ol5-9t-u6Y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WMA-QB-cIO" userLabel="tutorialText">
-                                <rect key="frame" x="16" y="158" width="343" height="497"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Posiziona il telefono di fronte a te ed esegui esercizi di flessione ed estensione del polso per più tempo possibile fino a raggiungere il livello massimo. Attendi il feedback audio-visivo prima di proseguire con la ripetizione successiva</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" systemColor="systemGray6Color"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUTORIAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOK-YD-ys8" userLabel="TUTORIAL">
-                                <rect key="frame" x="100" y="100" width="175" height="39.666666666666657"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y20-Qo-yKB">
+                                <rect key="frame" x="103" y="52" width="169" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Qy-nc6">
+                                <rect key="frame" x="27" y="114" width="320" height="656"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <mutableString key="text">Una volta eseguito l’accesso con le credenziali che ti sono state fornite, potrai vedere gli esercizi a te assegnati dal medico curante, clicca su uno di questi per svolgerlo.
+Svolgi l’esercizio posizionando il telefono di fronte a te ed esegui esercizi di flessione ed estensione del polso fino a raggiungere l’obiettivo dell’esercizio assegnato.
+Ad ogni ripetizione riceverai un feedback audio-visivo.
+Al termine dell’esercizio si aprirà la schermata di riepilogo e potrai cliccare sull’apposito bottone per tornare agli esercizi assegnati.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="XOK-YD-ys8" firstAttribute="top" secondItem="jc2-cO-1dZ" secondAttribute="bottom" constant="50" id="3xR-6R-VAu"/>
-                            <constraint firstItem="WMA-QB-cIO" firstAttribute="top" secondItem="XOK-YD-ys8" secondAttribute="bottom" constant="56" id="F3M-2F-UaY"/>
-                            <constraint firstItem="XOK-YD-ys8" firstAttribute="leading" secondItem="Bso-od-MCZ" secondAttribute="trailing" constant="38" id="lME-JS-oMl"/>
-                            <constraint firstItem="Bso-od-MCZ" firstAttribute="top" secondItem="jc2-cO-1dZ" secondAttribute="bottom" constant="58" id="m6B-Z3-xOp"/>
-                            <constraint firstItem="Bso-od-MCZ" firstAttribute="leading" secondItem="WMA-QB-cIO" secondAttribute="leading" constant="6" id="tNP-wK-fw9"/>
-                            <constraint firstItem="Bso-od-MCZ" firstAttribute="centerY" secondItem="XOK-YD-ys8" secondAttribute="centerY" id="u9K-LT-OnT"/>
+                            <constraint firstItem="Y20-Qo-yKB" firstAttribute="top" secondItem="jc2-cO-1dZ" secondAttribute="bottom" constant="2" id="9aY-8l-hbf"/>
+                            <constraint firstItem="N3m-0s-EeJ" firstAttribute="top" secondItem="CQe-Qy-nc6" secondAttribute="bottom" constant="8" id="DdX-fd-HYC"/>
+                            <constraint firstItem="CQe-Qy-nc6" firstAttribute="centerX" secondItem="Y20-Qo-yKB" secondAttribute="centerX" id="FT7-z6-b5a"/>
+                            <constraint firstItem="CQe-Qy-nc6" firstAttribute="top" secondItem="u3M-TT-W9s" secondAttribute="bottom" constant="24" id="ZZu-Ow-0hB"/>
+                            <constraint firstItem="u3M-TT-W9s" firstAttribute="leading" secondItem="Ez6-fu-NwZ" secondAttribute="leadingMargin" id="aa2-aD-JN8"/>
+                            <constraint firstItem="Y20-Qo-yKB" firstAttribute="centerX" secondItem="Ez6-fu-NwZ" secondAttribute="centerX" id="ewe-H3-dUm"/>
+                            <constraint firstItem="CQe-Qy-nc6" firstAttribute="leading" secondItem="Ez6-fu-NwZ" secondAttribute="leadingMargin" constant="11" id="pNs-nk-0xM"/>
+                            <constraint firstItem="u3M-TT-W9s" firstAttribute="centerY" secondItem="Y20-Qo-yKB" secondAttribute="centerY" id="vQt-Ne-apZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y20-Qo-yKB" secondAttribute="trailing" constant="87" id="xYg-qJ-Fdr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PAJ-xC-T9d"/>
@@ -500,23 +513,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditsCC.png" translatesAutoresizingMaskIntoConstraints="NO" id="GHR-rm-2NY">
-                                <rect key="frame" x="68" y="575" width="250" height="115"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="2Ox-5c-s6K"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woy-q1-1df" userLabel="creditsText">
-                                <rect key="frame" x="27" y="139" width="332" height="424"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">La seguente applicazione è stata sviluppata da Leonardo Persici per lo svolgimento dell'esame del corso Realtà Virtuale tenuto dai docenti Nunzio Alberto Borghese ed Eleonora Chitti</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-lD-5bd" userLabel="backButton">
-                                <rect key="frame" x="22" y="58" width="40" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-lD-5bd" userLabel="backButton">
+                                <rect key="frame" x="16" y="55" width="40" height="35"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
@@ -524,31 +522,39 @@
                                     <segue destination="15g-hD-WgS" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ta1-09-an4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREDITS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-aL-QLI">
-                                <rect key="frame" x="93" y="99" width="188" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="WPA-2N-Hiu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIu-ED-2UJ">
+                                <rect key="frame" x="103" y="52" width="169" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gZ0-vv-e7h">
+                                <rect key="frame" x="27" y="134" width="320" height="389"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <string key="text">La seguente applicazione è stata sviluppata da Leonardo Persici per lo svolgimento della tesi di laurea magistrale in Informatica presso il laboratorio AISLAB dell'Università degli Studi di Milano. 
+Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleonora Chitti e MIchele Antonazzi.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="creditsCC.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-Iv-jFr">
+                                <rect key="frame" x="27" y="549" width="320" height="132"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="woy-q1-1df" firstAttribute="top" secondItem="2vw-aL-QLI" secondAttribute="bottom" constant="-12" id="1t3-iV-b09"/>
-                            <constraint firstItem="7nI-T4-c5a" firstAttribute="top" secondItem="GHR-rm-2NY" secondAttribute="bottom" constant="88" id="308-OW-JgC"/>
-                            <constraint firstItem="woy-q1-1df" firstAttribute="top" secondItem="TE7-lD-5bd" secondAttribute="bottom" constant="-4" id="4yc-05-HbN"/>
-                            <constraint firstItem="2vw-aL-QLI" firstAttribute="leading" secondItem="TE7-lD-5bd" secondAttribute="trailing" constant="31" id="HVi-Wg-Qwg"/>
-                            <constraint firstItem="2vw-aL-QLI" firstAttribute="centerX" secondItem="woy-q1-1df" secondAttribute="centerX" constant="-6" id="Y83-ZE-v33"/>
-                            <constraint firstItem="TE7-lD-5bd" firstAttribute="centerY" secondItem="2vw-aL-QLI" secondAttribute="centerY" id="ags-uz-Zgl"/>
-                            <constraint firstItem="2vw-aL-QLI" firstAttribute="top" secondItem="zlk-SF-2ww" secondAttribute="bottom" constant="49" id="bBl-zc-Cwf"/>
-                            <constraint firstItem="2vw-aL-QLI" firstAttribute="leading" secondItem="di7-Ha-4Sw" secondAttribute="leadingMargin" constant="77" id="iDf-hh-z73"/>
-                            <constraint firstItem="woy-q1-1df" firstAttribute="leading" secondItem="di7-Ha-4Sw" secondAttribute="leadingMargin" constant="11" id="loI-9X-ovm"/>
-                            <constraint firstItem="7nI-T4-c5a" firstAttribute="top" secondItem="woy-q1-1df" secondAttribute="bottom" constant="215" id="oEl-HO-dUa"/>
-                            <constraint firstItem="GHR-rm-2NY" firstAttribute="leading" secondItem="di7-Ha-4Sw" secondAttribute="leadingMargin" constant="52" id="oZP-xT-nGY"/>
-                            <constraint firstItem="woy-q1-1df" firstAttribute="centerX" secondItem="GHR-rm-2NY" secondAttribute="centerX" id="sJJ-gR-6rx"/>
-                            <constraint firstItem="woy-q1-1df" firstAttribute="trailing" secondItem="di7-Ha-4Sw" secondAttribute="trailingMargin" id="xfM-hd-adB"/>
+                            <constraint firstItem="gZ0-vv-e7h" firstAttribute="centerX" secondItem="PIu-ED-2UJ" secondAttribute="centerX" id="3Xp-ik-4S5"/>
+                            <constraint firstItem="Bm4-Iv-jFr" firstAttribute="top" secondItem="gZ0-vv-e7h" secondAttribute="bottom" constant="26" id="BOD-VU-Jvv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PIu-ED-2UJ" secondAttribute="trailing" constant="87" id="Fzq-qm-6Kd"/>
+                            <constraint firstItem="gZ0-vv-e7h" firstAttribute="top" secondItem="PIu-ED-2UJ" secondAttribute="bottom" constant="41" id="PWa-Is-QHT"/>
+                            <constraint firstItem="TE7-lD-5bd" firstAttribute="centerY" secondItem="PIu-ED-2UJ" secondAttribute="centerY" id="QNT-4Q-bgG"/>
+                            <constraint firstItem="gZ0-vv-e7h" firstAttribute="leading" secondItem="di7-Ha-4Sw" secondAttribute="leadingMargin" constant="11" id="VNK-qj-2YS"/>
+                            <constraint firstItem="gZ0-vv-e7h" firstAttribute="leading" secondItem="Bm4-Iv-jFr" secondAttribute="leading" id="anS-EU-rZe"/>
+                            <constraint firstItem="PIu-ED-2UJ" firstAttribute="top" secondItem="zlk-SF-2ww" secondAttribute="bottom" constant="2" id="ezm-8r-Jya"/>
+                            <constraint firstItem="gZ0-vv-e7h" firstAttribute="trailing" secondItem="Bm4-Iv-jFr" secondAttribute="trailing" id="fiz-qz-9iQ"/>
+                            <constraint firstItem="7nI-T4-c5a" firstAttribute="top" secondItem="Bm4-Iv-jFr" secondAttribute="bottom" constant="97" id="gQI-UE-YpB"/>
+                            <constraint firstItem="TE7-lD-5bd" firstAttribute="leading" secondItem="di7-Ha-4Sw" secondAttribute="leadingMargin" id="hLh-ga-DZ9"/>
+                            <constraint firstItem="PIu-ED-2UJ" firstAttribute="centerX" secondItem="di7-Ha-4Sw" secondAttribute="centerX" id="kan-I6-X8H"/>
+                            <constraint firstItem="7nI-T4-c5a" firstAttribute="top" secondItem="gZ0-vv-e7h" secondAttribute="bottom" constant="255" id="lnV-ve-UO9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s8o-GT-0hC"/>
@@ -1114,7 +1120,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fhQ-qN-Ggu"/>
+        <segue reference="Ol5-9t-u6Y"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>
