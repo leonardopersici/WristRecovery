@@ -341,6 +341,18 @@ class DBManager {
         }
     }
     
+    func deleteEsercizio(id : Int) {
+        let query = "DELETE FROM Esercizi where id = \(id)"
+        var statement : OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+            if sqlite3_step(statement) == SQLITE_DONE {
+                print("Esercizio \(id) delete success")
+            }else {
+                print("Esercizio \(id) is not deleted in table")
+            }
+        }
+    }
+    
     func updateMedico(id : Int, attributo:String, valore:String) {
         let query = "UPDATE Medici SET \(attributo) = \(valore) WHERE id = \(id);"
         var statement : OpaquePointer? = nil
