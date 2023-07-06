@@ -346,7 +346,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.6s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWu-SU-KYd" userLabel="TimeTicker Label">
                                                     <rect key="frame" x="264.33333333333331" y="24" width="50.666666666666686" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                    <color key="textColor" systemColor="systemOrangeColor"/>
+                                                    <color key="textColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -382,39 +382,40 @@
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udf-8P-2IY">
-                                        <rect key="frame" x="119.66666666666669" y="83" width="136" height="44"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Clicca sul bottone per proseguire con gli esercizi assegnati." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JsZ-nV-UtO">
+                                        <rect key="frame" x="41" y="70" width="292" height="82"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ir-vS-yUB">
+                                        <rect key="frame" x="119.66666666666669" y="160" width="136" height="44"/>
+                                        <color key="tintColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="checklist.rtl" catalog="system">
+                                        <buttonConfiguration key="configuration" style="filled" image="checklist.rtl" catalog="system">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Esercizi">
                                                     <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <font key="NSFont" metaFont="system" size="25"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <color key="baseForegroundColor" systemColor="systemGray6Color"/>
                                         </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="OnEserciziTapped:" destination="ZxK-3e-9v5" eventType="touchUpInside" id="upU-ri-Lph"/>
-                                            <action selector="OnTappedAltriEsercizi:" destination="ZxK-3e-9v5" eventType="touchUpInside" id="o3E-qe-qcO"/>
-                                            <action selector="onAccediButtonTapped:" destination="JqD-vm-zb2" eventType="touchUpInside" id="wlv-9H-Qxf"/>
+                                            <action selector="OnEserciziTapped:" destination="ZxK-3e-9v5" eventType="touchUpInside" id="BgU-EV-C8F"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstItem="udf-8P-2IY" firstAttribute="centerX" secondItem="c93-ak-aGm" secondAttribute="centerX" id="Cpm-VG-5qs"/>
-                                    <constraint firstItem="udf-8P-2IY" firstAttribute="top" secondItem="c93-ak-aGm" secondAttribute="bottom" constant="21" id="GXw-Yw-3sf"/>
+                                    <constraint firstItem="0ir-vS-yUB" firstAttribute="top" secondItem="c93-ak-aGm" secondAttribute="bottom" constant="98" id="AbO-f6-tTh"/>
+                                    <constraint firstItem="0ir-vS-yUB" firstAttribute="top" secondItem="JsZ-nV-UtO" secondAttribute="bottom" constant="8" id="F9O-kC-fhp"/>
+                                    <constraint firstItem="JsZ-nV-UtO" firstAttribute="centerX" secondItem="c93-ak-aGm" secondAttribute="centerX" id="Fo7-dm-NXe"/>
+                                    <constraint firstItem="0ir-vS-yUB" firstAttribute="centerX" secondItem="c93-ak-aGm" secondAttribute="centerX" id="Q6W-cV-lcU"/>
+                                    <constraint firstItem="JsZ-nV-UtO" firstAttribute="top" secondItem="c93-ak-aGm" secondAttribute="bottom" constant="8" id="va9-Vs-JQT"/>
+                                    <constraint firstItem="JsZ-nV-UtO" firstAttribute="leading" secondItem="UYv-b2-rgK" secondAttribute="leading" constant="41" id="zhi-1N-m4i"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1190,9 +1191,6 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,9 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var endView: UIView!
     
     var completo: Bool?
+    var esercizio = Esercizio()
+    var fRep: Int?
+    var eRep: Int?
     
     /// The list of actions, sorted by descending time.
     private var sortedActions = [String]()
@@ -56,8 +59,10 @@ class SummaryViewController: UIViewController {
         // Call the super class last.
         super.viewDidDisappear(animated)
     }
-    @IBAction func OnTappedAltriEsercizi(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    @IBAction func OnEserciziTapped(_ sender: Any) {
+        print("ESERCIZI TAPPED")
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -86,7 +91,12 @@ extension SummaryViewController: UITableViewDataSource {
             let totalFrames = frameCounts[action] ?? 0
             let totalDuration = (Double(totalFrames)) / frameRate
 
-            summaryCell.totalDuration = totalDuration
+            if(action == "Flessione") {
+                summaryCell.timeLabel.text = "\(fRep ?? 0)/\(esercizio.flex)"
+            } else if (action == "Estensione"){
+                summaryCell.timeLabel.text = "\(eRep ?? 0)/\(esercizio.ext)"                
+            }
+            //summaryCell.totalDuration = totalDuration
             summaryCell.actionLabel.text = action
         }
         

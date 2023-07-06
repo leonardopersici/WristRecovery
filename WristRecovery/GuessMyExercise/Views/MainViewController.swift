@@ -130,6 +130,17 @@ extension MainViewController {
         // Update the device's orientation.
         videoCapture.updateDeviceOrientation()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let firstVC = presentingViewController as? PazienteViewController {
+            print("PAZIENTE VIEWDIDLOAD")
+            DispatchQueue.main.async {
+                firstVC.viewDidLoad()
+            }
+        }
+    }
 
     /// Notifies the video capture when the device rotates to a new orientation.
     override func viewWillTransition(to size: CGSize,
@@ -161,6 +172,9 @@ extension MainViewController {
 
         // Copy the current actions times to the summary view.
         summaryVC.completo = completo
+        summaryVC.esercizio = esercizio
+        summaryVC.fRep = actionRepCounts["Flessione"]
+        summaryVC.eRep = actionRepCounts["Estensione"]
         summaryVC.actionFrameCounts = actionFrameCounts
 
         // Define the presentation style for the summary view.

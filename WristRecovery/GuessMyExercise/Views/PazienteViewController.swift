@@ -21,6 +21,14 @@ class PazienteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eserciziPaziente.removeAll()
+        let esercizi = self.db.readEsercizi()
+        for e in esercizi {
+            if(e.assegnatoA == paziente.id){
+                eserciziPaziente.append(e)
+            }
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
