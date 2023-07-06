@@ -473,10 +473,10 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Qy-nc6">
                                 <rect key="frame" x="27" y="114" width="320" height="656"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <mutableString key="text">Una volta eseguito l’accesso con le credenziali che ti sono state fornite, potrai vedere gli esercizi a te assegnati dal medico curante, clicca su uno di questi per svolgerlo.
+                                <string key="text">Una volta eseguito l’accesso con le credenziali che ti sono state fornite, potrai vedere gli esercizi a te assegnati dal medico curante, clicca su uno di questi per svolgerlo.
 Svolgi l’esercizio posizionando il telefono di fronte a te ed esegui esercizi di flessione ed estensione del polso fino a raggiungere l’obiettivo dell’esercizio assegnato.
 Ad ogni ripetizione riceverai un feedback audio-visivo.
-Al termine dell’esercizio si aprirà la schermata di riepilogo e potrai cliccare sull’apposito bottone per tornare agli esercizi assegnati.</mutableString>
+Al termine dell’esercizio si aprirà la schermata di riepilogo e potrai cliccare sull’apposito bottone per tornare agli esercizi assegnati.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -595,7 +595,6 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="JDJ-oJ-ZR0"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>

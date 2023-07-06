@@ -110,4 +110,38 @@ extension EserciziPazienteViewController: UITableViewDataSource {
         esercizioCell.extLabel.text = "Estensioni: \(eserciziPaziente[indexPath.row].ext)"
         return esercizioCell
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //delete
+        let delete = UIContextualAction(style: .normal, title: "Elimina") { (action, view, completionHandler) in
+            self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
+            self.viewDidLoad()
+            print("delete \(indexPath.row)")
+            completionHandler(true)
+        }
+        delete.image = UIImage(systemName: "trash")
+        delete.backgroundColor = .red
+        
+        //swipe actions
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //delete
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+            self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
+            self.viewDidLoad()
+            print("delete \(indexPath.row)")
+            completionHandler(true)
+        }
+        delete.image = UIImage(systemName: "trash")
+        delete.backgroundColor = .red
+        
+        //swipe actions
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
+    }
 }
