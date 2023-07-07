@@ -34,31 +34,59 @@ class PazienteViewController: UIViewController {
         tableView.reloadData()
     }
 
+    @IBAction func OnLogoutButtonTapped(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Logout", message: "Cliccando su Esci si tornerà alla schermata iniziale dell'applicazione. Se si vuole rimanere all'interno del prorpio account cliccare Annulla.", preferredStyle: UIAlertController.Style.alert)
+
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Annulla", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Esci", style: UIAlertAction.Style.destructive, handler: { action in
+            
+            // do something like...
+            self.presentingViewController?.dismiss(animated: false, completion: nil)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension PazienteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you tapped \(indexPath.row)")
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
+        if(eserciziPaziente[indexPath.row].completato == 1){
+            // create the alert
+            let alert = UIAlertController(title: "Esercizio completato", message: "Complimenti, questo esercizio è stato già completato in precedenza. Selezionare un altro esercizio oppure attendere che il medico curante ne assegni ulteriori.", preferredStyle: UIAlertController.Style.alert)
 
-        // Get the view controller based on its name.
-        let vcName = "MainViewController"
-        let viewController = main.instantiateViewController(identifier: vcName)
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
 
-        // Cast it as a `MedicoViewController`.
-        guard let mainVC = viewController as? MainViewController else {
-            fatalError("Couldn't cast the Main View Controller.")
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+
+            // Get the view controller based on its name.
+            let vcName = "MainViewController"
+            let viewController = main.instantiateViewController(identifier: vcName)
+
+            // Cast it as a `MedicoViewController`.
+            guard let mainVC = viewController as? MainViewController else {
+                fatalError("Couldn't cast the Main View Controller.")
+            }
+            
+            mainVC.esercizio = eserciziPaziente[indexPath.row]
+            
+            // Define the presentation style for the main view.
+            modalPresentationStyle = .popover
+            modalTransitionStyle = .coverVertical
+            
+            // Present the main view to the user.
+            present(mainVC, animated: true)
         }
-        
-        mainVC.esercizio = eserciziPaziente[indexPath.row]
-        
-        // Define the presentation style for the main view.
-        modalPresentationStyle = .popover
-        modalTransitionStyle = .coverVertical
-        
-        // Present the main view to the user.
-        present(mainVC, animated: true)
     }
 }
 

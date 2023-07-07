@@ -712,12 +712,12 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                         <viewControllerLayoutGuide type="top" id="eFr-Hz-qPD"/>
                         <viewControllerLayoutGuide type="bottom" id="lsn-Bw-Qdw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Mhi-Tg-fRq">
+                    <view key="view" contentMode="scaleToFill" id="Mhi-Tg-fRq" userLabel="Blur View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hAV-PP-l4g">
-                                <rect key="frame" x="0.0" y="104" width="375" height="631"/>
+                                <rect key="frame" x="0.0" y="179" width="375" height="557"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
@@ -730,15 +730,15 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Paziente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo2-kc-VNW" userLabel="PazienteLabel">
-                                                    <rect key="frame" x="30.333333333333329" y="16" width="168.33333333333337" height="68"/>
+                                                    <rect key="frame" x="83" y="16" width="169" height="68"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="leading" secondItem="42w-Tg-UAZ" secondAttribute="leadingMargin" constant="10.333333333333329" id="3LM-Cb-4Xr"/>
-                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="centerY" secondItem="42w-Tg-UAZ" secondAttribute="centerY" id="OYs-Zs-p7W"/>
-                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="top" secondItem="42w-Tg-UAZ" secondAttribute="topMargin" constant="5" id="kGg-Re-gxr"/>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="top" secondItem="42w-Tg-UAZ" secondAttribute="topMargin" constant="5" id="pev-ac-PoL"/>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="centerX" secondItem="42w-Tg-UAZ" secondAttribute="centerX" id="qCD-AM-4fD"/>
+                                                <constraint firstItem="mo2-kc-VNW" firstAttribute="centerY" secondItem="42w-Tg-UAZ" secondAttribute="centerY" id="vMY-mL-mye"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -754,6 +754,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="OnLogoutButtonTapped:" destination="r5a-33-dUk" eventType="touchUpInside" id="KJg-Q4-mKu"/>
                                     <segue destination="15g-hD-WgS" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="fhQ-qN-Ggu"/>
                                 </connections>
                             </button>
@@ -762,21 +763,48 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I19-dA-TRL" userLabel="Nuovo paziente Button">
+                                <rect key="frame" x="130" y="118" width="115" height="41"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+ Nuovo">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="25"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="OnNuovoButtonTapped:" destination="r5a-33-dUk" eventType="touchUpInside" id="J2Q-r5-nu7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="lsn-Bw-Qdw" firstAttribute="top" secondItem="hAV-PP-l4g" secondAttribute="bottom" constant="43" id="0BU-9m-Nwb"/>
-                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="dWN-DG-rM9" secondAttribute="bottom" constant="5" id="GES-pY-YcR"/>
-                            <constraint firstItem="hAV-PP-l4g" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leadingMargin" constant="-16" id="Vxb-c6-DEE"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leading" id="01D-SQ-aOa"/>
+                            <constraint firstItem="lsn-Bw-Qdw" firstAttribute="top" secondItem="hAV-PP-l4g" secondAttribute="bottom" constant="42" id="6Xa-Do-OhY"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="I19-dA-TRL" secondAttribute="bottom" constant="20" id="BBU-Lt-1Kv"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="centerX" secondItem="dWN-DG-rM9" secondAttribute="centerX" id="OdL-Ap-S8s"/>
                             <constraint firstItem="dWN-DG-rM9" firstAttribute="top" secondItem="eFr-Hz-qPD" secondAttribute="bottom" constant="8" id="bfP-4y-yLi"/>
                             <constraint firstItem="dWN-DG-rM9" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leadingMargin" constant="46" id="dhJ-bs-0pg"/>
+                            <constraint firstItem="I19-dA-TRL" firstAttribute="top" secondItem="dWN-DG-rM9" secondAttribute="bottom" constant="19" id="e8M-4w-KuT"/>
+                            <constraint firstItem="hAV-PP-l4g" firstAttribute="top" secondItem="dWN-DG-rM9" secondAttribute="bottom" constant="80" id="gz3-em-Np8"/>
                             <constraint firstItem="Xir-ex-dIx" firstAttribute="leading" secondItem="Mhi-Tg-fRq" secondAttribute="leadingMargin" id="hL4-B7-grA"/>
-                            <constraint firstItem="dWN-DG-rM9" firstAttribute="centerX" secondItem="hAV-PP-l4g" secondAttribute="centerX" id="jTh-Vc-ss7"/>
+                            <constraint firstItem="I19-dA-TRL" firstAttribute="centerX" secondItem="dWN-DG-rM9" secondAttribute="centerX" id="kDr-D8-5fl"/>
                             <constraint firstItem="Xir-ex-dIx" firstAttribute="centerY" secondItem="dWN-DG-rM9" secondAttribute="centerY" id="m0a-6s-ZCO"/>
                             <constraint firstItem="dWN-DG-rM9" firstAttribute="centerX" secondItem="Mhi-Tg-fRq" secondAttribute="centerX" id="y2l-DQ-lMA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blurView" destination="Mhi-Tg-fRq" id="IZe-mv-5bv"/>
                         <outlet property="tableView" destination="hAV-PP-l4g" id="4Cd-dj-Vh9"/>
                     </connections>
                 </viewController>
@@ -804,7 +832,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UqW-6R-nKB">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UqW-6R-nKB">
                                         <rect key="frame" x="200" y="56" width="69" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="2R4-eq-rE1"/>
@@ -818,8 +846,11 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pms-oM-RET">
-                                        <rect key="frame" x="66" y="177" width="159" height="45.333333333333343"/>
+                                        <rect key="frame" x="66" y="177" width="159" height="41"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="Sp6-1P-iEY"/>
+                                        </constraints>
                                         <color key="tintColor" systemColor="systemGray6Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -846,7 +877,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-mu-aIe">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-mu-aIe">
                                         <rect key="frame" x="198" y="120" width="69" height="41"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -854,9 +885,10 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstItem="Pms-oM-RET" firstAttribute="top" secondItem="seZ-mu-aIe" secondAttribute="bottom" constant="16" id="2M8-yh-Gx0"/>
+                                    <constraint firstItem="Pms-oM-RET" firstAttribute="centerX" secondItem="HnJ-VA-rK4" secondAttribute="centerX" id="2eP-5g-kFK"/>
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="leading" id="3JL-t9-sTP"/>
                                     <constraint firstItem="ZbB-MO-Pcv" firstAttribute="centerY" secondItem="seZ-mu-aIe" secondAttribute="centerY" id="6ih-LO-Y6b"/>
+                                    <constraint firstItem="Pms-oM-RET" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="66" id="8ci-Ju-DRZ"/>
                                     <constraint firstItem="seZ-mu-aIe" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="trailing" constant="34" id="Cpf-XY-9wn"/>
                                     <constraint firstAttribute="trailing" secondItem="UqW-6R-nKB" secondAttribute="trailing" constant="22" id="JoF-iP-28r"/>
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="24" id="QHd-wJ-pcv"/>
@@ -865,11 +897,10 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="centerY" secondItem="UqW-6R-nKB" secondAttribute="centerY" id="YwH-j3-NYM"/>
                                     <constraint firstItem="HnJ-VA-rK4" firstAttribute="centerX" secondItem="wUh-TK-CHo" secondAttribute="centerX" id="cVM-Re-tBw"/>
                                     <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="seZ-mu-aIe" secondAttribute="leading" constant="2" id="cm0-k3-IBU"/>
-                                    <constraint firstItem="Pms-oM-RET" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="66" id="fn4-bB-cUn"/>
+                                    <constraint firstItem="Pms-oM-RET" firstAttribute="top" secondItem="seZ-mu-aIe" secondAttribute="bottom" constant="16" id="f8w-EY-YSO"/>
                                     <constraint firstItem="HnJ-VA-rK4" firstAttribute="top" secondItem="wUh-TK-CHo" secondAttribute="topMargin" id="iyc-DZ-xzG"/>
                                     <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="B8A-JA-l7l" secondAttribute="trailing" constant="35" id="mEm-Ms-VWa"/>
                                     <constraint firstItem="UqW-6R-nKB" firstAttribute="top" secondItem="HnJ-VA-rK4" secondAttribute="bottom" constant="8" id="oST-WW-49G"/>
-                                    <constraint firstItem="HnJ-VA-rK4" firstAttribute="centerX" secondItem="Pms-oM-RET" secondAttribute="centerX" id="ucC-Az-hBg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -908,7 +939,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weS-Zm-QzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328.8" y="-554.18719211822668"/>
+            <point key="canvasLocation" x="2124" y="-554"/>
         </scene>
         <!--Paziente View Controller-->
         <scene sceneID="qsk-Th-Rap">
@@ -1006,6 +1037,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="OnLogoutButtonTapped:" destination="Ymf-tQ-1x8" eventType="touchUpInside" id="VZz-Ro-XG5"/>
                                     <segue destination="15g-hD-WgS" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="t9w-2I-pH5"/>
                                 </connections>
                             </button>
@@ -1140,8 +1172,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="OnAssegnaEsercizioButtonTapped:" destination="zba-fM-ABe" eventType="touchUpInside" id="JTu-xh-mTa"/>
-                                    <action selector="onAccediButtonTapped:" destination="JqD-vm-zb2" eventType="touchUpInside" id="64B-ws-Adr"/>
+                                    <action selector="OnAssegnaButtonTapped:" destination="zba-fM-ABe" eventType="touchUpInside" id="fsM-tp-AqG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Paziente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlj-k2-GSQ">
@@ -1183,11 +1214,126 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t6S-01-Ymv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1329" y="-554"/>
+        </scene>
+        <!--PopUp Paziente View Controller-->
+        <scene sceneID="Q3y-YD-Ppe">
+            <objects>
+                <viewController storyboardIdentifier="PopUpPazienteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bMf-p4-55l" userLabel="PopUp Paziente View Controller" customClass="PopUpPazienteViewController" customModule="WristRecovery" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jGj-O4-rQf"/>
+                        <viewControllerLayoutGuide type="bottom" id="aLw-wp-g7N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Del-g8-Xdp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8T-Ad-vJq">
+                                <rect key="frame" x="42" y="211" width="291" height="244"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s8-H8-49S" userLabel="UsernameLabel">
+                                        <rect key="frame" x="75" y="74" width="141" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-Nj-MsT" userLabel="UsernameField">
+                                        <rect key="frame" x="72" y="98" width="147" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmP-sX-0lm">
+                                        <rect key="frame" x="66" y="174" width="159" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="i7A-LY-rZE"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemGray6Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Conferma">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="26"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="OnConfermaButtonTapped:" destination="bMf-p4-55l" eventType="touchUpInside" id="8kw-xW-PfU"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paziente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctf-2i-n3v">
+                                        <rect key="frame" x="72" y="16" width="147" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="qi7-A9-MWf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="DmP-sX-0lm" firstAttribute="top" secondItem="5s8-H8-49S" secondAttribute="bottom" constant="76" id="015-th-DW5"/>
+                                    <constraint firstItem="Ctf-2i-n3v" firstAttribute="centerX" secondItem="5s8-H8-49S" secondAttribute="centerX" id="1gV-Es-hZu"/>
+                                    <constraint firstItem="5s8-H8-49S" firstAttribute="top" secondItem="Ctf-2i-n3v" secondAttribute="bottom" constant="17" id="5an-A6-WWG"/>
+                                    <constraint firstItem="Ctf-2i-n3v" firstAttribute="top" secondItem="C8T-Ad-vJq" secondAttribute="top" constant="16" id="7HY-Qh-Rbh"/>
+                                    <constraint firstItem="yk5-Nj-MsT" firstAttribute="top" secondItem="Ctf-2i-n3v" secondAttribute="bottom" constant="41" id="NQb-Jv-MKc"/>
+                                    <constraint firstItem="5s8-H8-49S" firstAttribute="leading" secondItem="C8T-Ad-vJq" secondAttribute="leading" constant="75" id="O2g-8S-F1i"/>
+                                    <constraint firstItem="yk5-Nj-MsT" firstAttribute="centerX" secondItem="DmP-sX-0lm" secondAttribute="centerX" id="Rdt-SK-JVa"/>
+                                    <constraint firstItem="Ctf-2i-n3v" firstAttribute="leading" secondItem="C8T-Ad-vJq" secondAttribute="leading" constant="72" id="WrI-5L-jpW"/>
+                                    <constraint firstItem="DmP-sX-0lm" firstAttribute="leading" secondItem="C8T-Ad-vJq" secondAttribute="leading" constant="66" id="eYG-0H-D6M"/>
+                                    <constraint firstItem="Ctf-2i-n3v" firstAttribute="centerX" secondItem="C8T-Ad-vJq" secondAttribute="centerX" id="kdT-e3-ugH"/>
+                                    <constraint firstItem="DmP-sX-0lm" firstAttribute="top" secondItem="yk5-Nj-MsT" secondAttribute="bottom" constant="35" id="onc-qr-X0K"/>
+                                    <constraint firstItem="5s8-H8-49S" firstAttribute="centerX" secondItem="yk5-Nj-MsT" secondAttribute="centerX" id="uiQ-LQ-Ejb"/>
+                                    <constraint firstAttribute="bottom" secondItem="DmP-sX-0lm" secondAttribute="bottom" constant="29" id="wLN-4g-I2Z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HZ7-GJ-YCb" userLabel="closeButton">
+                                <rect key="frame" x="311" y="192" width="39" height="43"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="dUD-oh-MQb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aLw-wp-g7N" firstAttribute="top" secondItem="C8T-Ad-vJq" secondAttribute="bottom" constant="323" id="9P5-74-WtP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HZ7-GJ-YCb" secondAttribute="trailing" constant="9" id="FFm-gL-nKV"/>
+                            <constraint firstItem="C8T-Ad-vJq" firstAttribute="centerX" secondItem="Del-g8-Xdp" secondAttribute="centerX" id="Nj5-8H-eOF"/>
+                            <constraint firstItem="HZ7-GJ-YCb" firstAttribute="top" secondItem="jGj-O4-rQf" secondAttribute="bottom" constant="141" id="Rf2-MK-lur"/>
+                            <constraint firstItem="C8T-Ad-vJq" firstAttribute="top" secondItem="jGj-O4-rQf" secondAttribute="bottom" constant="161" id="Ynj-9O-Sai"/>
+                            <constraint firstItem="C8T-Ad-vJq" firstAttribute="leading" secondItem="Del-g8-Xdp" secondAttribute="leadingMargin" constant="26" id="hzV-x9-77u"/>
+                            <constraint firstItem="aLw-wp-g7N" firstAttribute="top" secondItem="HZ7-GJ-YCb" secondAttribute="bottom" constant="542.66666666666674" id="vPv-2H-sez"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZVO-e1-vwX"/>
+                    <connections>
+                        <outlet property="bgView" destination="Del-g8-Xdp" id="Kqt-Kx-2Le"/>
+                        <outlet property="closeButton" destination="HZ7-GJ-YCb" id="gtI-VF-4kC"/>
+                        <outlet property="usernameField" destination="yk5-Nj-MsT" id="TlA-yM-smR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iq2-cL-UDE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="533.60000000000002" y="-554.18719211822668"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ta1-09-an4"/>
+        <segue reference="t9w-2I-pH5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>

@@ -54,9 +54,14 @@ class LoginViewController: UIViewController {
                 }
                 
                 let medico = m
+                var pazientiMedico = [Paziente]()
                 
-                medicoVC.medici = medici
-                medicoVC.pazienti = pazienti
+                for p in pazienti {
+                    if (p.medico == m.id){
+                        pazientiMedico.append(p)
+                    }
+                }
+                medicoVC.pazientiMedico = pazientiMedico
                 medicoVC.medico = medico
                 
                 // Define the presentation style for the login view.
@@ -67,8 +72,6 @@ class LoginViewController: UIViewController {
                 present(medicoVC, animated: true)
                 login = true
                 break
-            } else {
-                print("CREDENZIALI ERRATE M")
             }
         }
         if (login == false){
@@ -109,6 +112,14 @@ class LoginViewController: UIViewController {
                     break
                 } else {
                     print("CREDENZIALI ERRATE P")
+                    // create the alert
+                    let alert = UIAlertController(title: "Credenziali errate", message: "Lo username e/o la passsword inserite sono errati, si prega di riprovare.", preferredStyle: UIAlertController.Style.alert)
+
+                    // add the actions (buttons)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }

@@ -25,7 +25,6 @@ class EserciziPazienteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("VIEWDIDLOAD")
         for subview in blurView.subviews {
             if subview is UIVisualEffectView {
                 subview.removeFromSuperview()
@@ -49,8 +48,7 @@ class EserciziPazienteViewController: UIViewController {
     @IBAction func OnBackButtonTapped(_ sender: Any) {
         dismiss(animated: true)
     }
-    @IBAction func OnAssegnaEsercizioButtonTapped(_ sender: Any) {
-        
+    @IBAction func OnAssegnaButtonTapped(_ sender: Any) {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blurView.bounds
@@ -69,7 +67,21 @@ class EserciziPazienteViewController: UIViewController {
         
         let paziente = paziente.id
         let medico = medico.id
-        let id = db.readEsercizi().count
+        var id = Int()
+        var esercizi = db.readEsercizi()
+        var idE = [Int]()
+        for e in esercizi{
+            idE.append(e.id)
+        }
+        var index = 0
+        for _ in idE{
+            print("\(idE[index]+1) + \(idE[index+1])")
+            if(idE[index]+1 != idE[index+1]){
+                id = idE[index]+1
+                break
+            }
+            index += 1
+        }
         
         popUpEsercizioVC.medicoID = medico
         popUpEsercizioVC.pazienteID = paziente
@@ -81,8 +93,7 @@ class EserciziPazienteViewController: UIViewController {
         
         // Present the paziente view to the user.
         present(popUpEsercizioVC, animated: true)
-    }
-    
+    }    
 }
 
 extension EserciziPazienteViewController: UITableViewDelegate {
@@ -115,9 +126,21 @@ extension EserciziPazienteViewController: UITableViewDataSource {
         
         //delete
         let delete = UIContextualAction(style: .normal, title: "Elimina") { (action, view, completionHandler) in
-            self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
-            self.viewDidLoad()
-            print("delete \(indexPath.row)")
+            // create the alert
+            let alert = UIAlertController(title: "Elimina esercizio", message: "Cliccando su Elimina confermi la cancellazione dell'esercizio selezionato. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
+
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Annulla", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Elimina", style: UIAlertAction.Style.destructive, handler: { action in
+                
+                // do something like...
+                self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
+                self.viewDidLoad()
+                print("delete \(indexPath.row)")
+
+            }))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
             completionHandler(true)
         }
         delete.image = UIImage(systemName: "trash")
@@ -132,9 +155,21 @@ extension EserciziPazienteViewController: UITableViewDataSource {
         
         //delete
         let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
-            self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
-            self.viewDidLoad()
-            print("delete \(indexPath.row)")
+            // create the alert
+            let alert = UIAlertController(title: "Elimina esercizio", message: "Cliccando su Elimina confermi la cancellazione dell'esercizio selezionato. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
+
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Annulla", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Elimina", style: UIAlertAction.Style.destructive, handler: { action in
+                
+                // do something like...
+                self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
+                self.viewDidLoad()
+                print("delete \(indexPath.row)")
+
+            }))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
             completionHandler(true)
         }
         delete.image = UIImage(systemName: "trash")
