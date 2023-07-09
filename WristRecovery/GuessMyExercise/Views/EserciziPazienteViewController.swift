@@ -68,7 +68,7 @@ class EserciziPazienteViewController: UIViewController {
         let paziente = paziente.id
         let medico = medico.id
         var id = Int()
-        var esercizi = db.readEsercizi()
+        let esercizi = db.readEsercizi()
         var idE = [Int]()
         for e in esercizi{
             idE.append(e.id)

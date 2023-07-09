@@ -74,7 +74,9 @@ class LoginViewController: UIViewController {
                 break
             }
         }
+        print("login \(login)")
         if (login == false){
+            print("IF PAZIENTE")
             for p in pazienti {
                 if (usernameField.text == p.username && passwordField.text == p.password){
                     print("CREDENZIALI CORRETTE P")
@@ -109,19 +111,20 @@ class LoginViewController: UIViewController {
                     
                     // Present the login view to the user.
                     present(pazienteVC, animated: true)
+                    login = true
                     break
-                } else {
-                    print("CREDENZIALI ERRATE P")
-                    // create the alert
-                    let alert = UIAlertController(title: "Credenziali errate", message: "Lo username e/o la passsword inserite sono errati, si prega di riprovare.", preferredStyle: UIAlertController.Style.alert)
-
-                    // add the actions (buttons)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
                 }
             }
+        } else {
+            print("CREDENZIALI ERRATE")
+            // create the alert
+            let alert = UIAlertController(title: "Credenziali errate", message: "Lo username e/o la passsword inserite sono errati, si prega di riprovare.", preferredStyle: UIAlertController.Style.alert)
+
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
