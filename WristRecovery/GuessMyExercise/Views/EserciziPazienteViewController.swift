@@ -49,7 +49,7 @@ class EserciziPazienteViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func OnAssegnaButtonTapped(_ sender: Any) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blurView.bounds
         blurView.addSubview(blurEffectView)

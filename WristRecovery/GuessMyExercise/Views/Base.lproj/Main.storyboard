@@ -344,7 +344,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.6s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWu-SU-KYd" userLabel="TimeTicker Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.6s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWu-SU-KYd" userLabel="Rep Count Label">
                                                     <rect key="frame" x="264.33333333333331" y="24" width="50.666666666666686" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <color key="textColor" red="1" green="0.74561079019999998" blue="0.1376604099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -828,20 +828,22 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                 <rect key="frame" x="42" y="211" width="291" height="244"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flessioni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-JA-l7l">
-                                        <rect key="frame" x="24" y="61" width="141" height="31"/>
+                                        <rect key="frame" x="24" y="61" width="116" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UqW-6R-nKB">
-                                        <rect key="frame" x="200" y="56" width="69" height="41"/>
+                                        <rect key="frame" x="175" y="56" width="94" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="tintColor" name="Label Stack Background"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="69" id="2R4-eq-rE1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="2R4-eq-rE1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estensioni" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbB-MO-Pcv">
-                                        <rect key="frame" x="24" y="125" width="140" height="31"/>
+                                        <rect key="frame" x="24" y="125" width="115" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -878,7 +880,9 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="seZ-mu-aIe">
-                                        <rect key="frame" x="198" y="120" width="69" height="41"/>
+                                        <rect key="frame" x="175" y="120" width="94" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="tintColor" systemColor="systemGray6Color"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
@@ -889,14 +893,14 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="leading" id="3JL-t9-sTP"/>
                                     <constraint firstItem="ZbB-MO-Pcv" firstAttribute="centerY" secondItem="seZ-mu-aIe" secondAttribute="centerY" id="6ih-LO-Y6b"/>
                                     <constraint firstItem="Pms-oM-RET" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="66" id="8ci-Ju-DRZ"/>
-                                    <constraint firstItem="seZ-mu-aIe" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="trailing" constant="34" id="Cpf-XY-9wn"/>
+                                    <constraint firstItem="seZ-mu-aIe" firstAttribute="leading" secondItem="ZbB-MO-Pcv" secondAttribute="trailing" constant="36" id="Cpf-XY-9wn"/>
                                     <constraint firstAttribute="trailing" secondItem="UqW-6R-nKB" secondAttribute="trailing" constant="22" id="JoF-iP-28r"/>
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="leading" secondItem="wUh-TK-CHo" secondAttribute="leading" constant="24" id="QHd-wJ-pcv"/>
                                     <constraint firstItem="seZ-mu-aIe" firstAttribute="top" secondItem="UqW-6R-nKB" secondAttribute="bottom" constant="23" id="U0v-Dn-XyG"/>
-                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="trailing" secondItem="seZ-mu-aIe" secondAttribute="trailing" constant="2" id="YRd-PV-PKt"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="trailing" secondItem="seZ-mu-aIe" secondAttribute="trailing" id="YRd-PV-PKt"/>
                                     <constraint firstItem="B8A-JA-l7l" firstAttribute="centerY" secondItem="UqW-6R-nKB" secondAttribute="centerY" id="YwH-j3-NYM"/>
                                     <constraint firstItem="HnJ-VA-rK4" firstAttribute="centerX" secondItem="wUh-TK-CHo" secondAttribute="centerX" id="cVM-Re-tBw"/>
-                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="seZ-mu-aIe" secondAttribute="leading" constant="2" id="cm0-k3-IBU"/>
+                                    <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="seZ-mu-aIe" secondAttribute="leading" id="cm0-k3-IBU"/>
                                     <constraint firstItem="Pms-oM-RET" firstAttribute="top" secondItem="seZ-mu-aIe" secondAttribute="bottom" constant="16" id="f8w-EY-YSO"/>
                                     <constraint firstItem="HnJ-VA-rK4" firstAttribute="top" secondItem="wUh-TK-CHo" secondAttribute="topMargin" id="iyc-DZ-xzG"/>
                                     <constraint firstItem="UqW-6R-nKB" firstAttribute="leading" secondItem="B8A-JA-l7l" secondAttribute="trailing" constant="35" id="mEm-Ms-VWa"/>
@@ -909,7 +913,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-97-Kwd" userLabel="closeButton">
-                                <rect key="frame" x="311" y="192" width="39" height="43"/>
+                                <rect key="frame" x="312" y="190" width="39" height="43"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
@@ -922,11 +926,11 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                         <constraints>
                             <constraint firstItem="wUh-TK-CHo" firstAttribute="top" secondItem="pyB-Vx-01E" secondAttribute="bottom" constant="161" id="1tq-aD-vfN"/>
                             <constraint firstItem="wUh-TK-CHo" firstAttribute="leading" secondItem="gCd-bY-nh0" secondAttribute="leadingMargin" constant="26" id="9Vc-2k-O8f"/>
-                            <constraint firstItem="aVY-97-Kwd" firstAttribute="top" secondItem="pyB-Vx-01E" secondAttribute="bottom" constant="141" id="Xrf-Gu-X6m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aVY-97-Kwd" secondAttribute="trailing" constant="9" id="cBA-vL-SOK"/>
+                            <constraint firstItem="aVY-97-Kwd" firstAttribute="top" secondItem="pyB-Vx-01E" secondAttribute="bottom" constant="139" id="Xrf-Gu-X6m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aVY-97-Kwd" secondAttribute="trailing" constant="8" id="cBA-vL-SOK"/>
                             <constraint firstItem="wUh-TK-CHo" firstAttribute="centerX" secondItem="gCd-bY-nh0" secondAttribute="centerX" id="gua-6a-EFG"/>
                             <constraint firstItem="TOR-pY-4Z0" firstAttribute="top" secondItem="wUh-TK-CHo" secondAttribute="bottom" constant="323" id="mSD-5T-f7F"/>
-                            <constraint firstItem="TOR-pY-4Z0" firstAttribute="top" secondItem="aVY-97-Kwd" secondAttribute="bottom" constant="542.66666666666674" id="zqn-zR-YYl"/>
+                            <constraint firstItem="TOR-pY-4Z0" firstAttribute="top" secondItem="aVY-97-Kwd" secondAttribute="bottom" constant="544.66666666666674" id="zqn-zR-YYl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="txw-Ad-juw"/>
@@ -1237,8 +1241,10 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-Nj-MsT" userLabel="UsernameField">
-                                        <rect key="frame" x="72" y="98" width="147" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                        <rect key="frame" x="74.000000000000014" y="98" width="143.33333333333337" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <color key="tintColor" name="Label Stack Background"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmP-sX-0lm">
@@ -1300,7 +1306,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HZ7-GJ-YCb" userLabel="closeButton">
-                                <rect key="frame" x="311" y="192" width="39" height="43"/>
+                                <rect key="frame" x="312" y="190" width="39" height="43"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
@@ -1312,12 +1318,12 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aLw-wp-g7N" firstAttribute="top" secondItem="C8T-Ad-vJq" secondAttribute="bottom" constant="323" id="9P5-74-WtP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HZ7-GJ-YCb" secondAttribute="trailing" constant="9" id="FFm-gL-nKV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HZ7-GJ-YCb" secondAttribute="trailing" constant="8" id="FFm-gL-nKV"/>
                             <constraint firstItem="C8T-Ad-vJq" firstAttribute="centerX" secondItem="Del-g8-Xdp" secondAttribute="centerX" id="Nj5-8H-eOF"/>
-                            <constraint firstItem="HZ7-GJ-YCb" firstAttribute="top" secondItem="jGj-O4-rQf" secondAttribute="bottom" constant="141" id="Rf2-MK-lur"/>
+                            <constraint firstItem="HZ7-GJ-YCb" firstAttribute="top" secondItem="jGj-O4-rQf" secondAttribute="bottom" constant="139" id="Rf2-MK-lur"/>
                             <constraint firstItem="C8T-Ad-vJq" firstAttribute="top" secondItem="jGj-O4-rQf" secondAttribute="bottom" constant="161" id="Ynj-9O-Sai"/>
                             <constraint firstItem="C8T-Ad-vJq" firstAttribute="leading" secondItem="Del-g8-Xdp" secondAttribute="leadingMargin" constant="26" id="hzV-x9-77u"/>
-                            <constraint firstItem="aLw-wp-g7N" firstAttribute="top" secondItem="HZ7-GJ-YCb" secondAttribute="bottom" constant="542.66666666666674" id="vPv-2H-sez"/>
+                            <constraint firstItem="aLw-wp-g7N" firstAttribute="top" secondItem="HZ7-GJ-YCb" secondAttribute="bottom" constant="544.66666666666674" id="vPv-2H-sez"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZVO-e1-vwX"/>
@@ -1333,7 +1339,7 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t9w-2I-pH5"/>
+        <segue reference="ta1-09-an4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>

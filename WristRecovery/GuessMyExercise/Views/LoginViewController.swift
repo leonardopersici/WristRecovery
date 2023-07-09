@@ -39,6 +39,18 @@ class LoginViewController: UIViewController {
         let esercizi = self.db.readEsercizi()
         var login = false
         
+        if (usernameField.text == "" || passwordField.text == ""){
+                print("CREDENZIALI ERRATE")
+                // create the alert
+                let alert = UIAlertController(title: "Credenziali mancanti", message: "Lo username e/o la passsword non sono state inserite, si prega di inserire le credenziali mancanti e riprovare.", preferredStyle: UIAlertController.Style.alert)
+
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+        }
+        
         for m in medici {
             if (usernameField.text == m.username && passwordField.text == m.password){
                 print("CREDENZIALI CORRETTE M")
@@ -74,9 +86,7 @@ class LoginViewController: UIViewController {
                 break
             }
         }
-        print("login \(login)")
         if (login == false){
-            print("IF PAZIENTE")
             for p in pazienti {
                 if (usernameField.text == p.username && passwordField.text == p.password){
                     print("CREDENZIALI CORRETTE P")

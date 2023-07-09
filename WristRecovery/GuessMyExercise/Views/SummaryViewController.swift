@@ -88,8 +88,6 @@ extension SummaryViewController: UITableViewDataSource {
             let frameRate = WristRecoveryClassifier.frameRate
 
             let action = sortedActions[indexPath.row]
-            let totalFrames = frameCounts[action] ?? 0
-            let totalDuration = (Double(totalFrames)) / frameRate
 
             if(action == "Flessione") {
                 summaryCell.timeLabel.text = "\(fRep ?? 0)/\(esercizio.flex)"
@@ -112,11 +110,4 @@ class SummaryTableViewCell: UITableViewCell {
 
     /// Displays the amount of time of the action.
     @IBOutlet weak var timeLabel: UILabel!
-
-    /// Converts the floating point value into a string for the action label.
-    ///
-    /// For example, the time label shows "1.7s" for a value of `1.66666666666`.
-    var totalDuration: Double = 0 {
-        didSet { timeLabel.text = String(format: "%0.1fs", totalDuration) }
-    }
 }

@@ -80,7 +80,7 @@ class StartViewController: UIViewController {
     
     @objc func tapStartFunction(sender:UITapGestureRecognizer) {
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterialDark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = blurView.bounds
         blurView.addSubview(blurEffectView)
