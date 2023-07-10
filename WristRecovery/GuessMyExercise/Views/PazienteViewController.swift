@@ -55,7 +55,6 @@ class PazienteViewController: UIViewController {
 
 extension PazienteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped \(indexPath.row)")
         
         if(eserciziPaziente[indexPath.row].completato == 1){
             // create the alert

@@ -135,7 +135,6 @@ extension MainViewController {
         super.viewWillDisappear(animated)
         
         if let firstVC = presentingViewController as? PazienteViewController {
-            print("PAZIENTE VIEWDIDLOAD")
             DispatchQueue.main.async {
                 firstVC.viewDidLoad()
             }
@@ -180,10 +179,6 @@ extension MainViewController {
         // Define the presentation style for the summary view.
         modalPresentationStyle = .popover
         modalTransitionStyle = .coverVertical
-        
-        
-        //stampare la confidence media per capire quanto alzare la soglia accettabile
-        print("CONFIDENCE MEDIA: ", (self.meanConfidence.reduce(0.0, +))/Double(self.meanConfidence.count))
 
         // Reestablish the video-processing chain when the user dismisses the
         // summary view.
@@ -192,7 +187,6 @@ extension MainViewController {
             // view goes away.
             self.videoCapture.isEnabled = true
             self.meanConfidence.removeAll()
-            print("DOPO REMOVE ", self.meanConfidence)
         }
 
         // Present the summary view to the user.
@@ -288,7 +282,6 @@ extension MainViewController {
         print("REP: \(actionLabel)  \(totalReps)")
         
         livCount += 1
-        print("LIVCOUNT: \(livCount)")
         
         if(actionLabel == "Flessione"){
             DispatchQueue.main.async {
@@ -357,7 +350,6 @@ extension MainViewController {
         
         if actionPredicted.count == 1 {
             SpeechService.shared.startSpeech(text: actionPredicted.first!)
-            //print("Prima \(actionPredicted.first!)")
             if(actionPredicted.first == "Flessione"){
                 flexStack.isHidden = false
                 extStack.isHidden = true

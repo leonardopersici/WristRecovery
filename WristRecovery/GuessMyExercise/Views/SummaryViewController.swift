@@ -60,7 +60,6 @@ class SummaryViewController: UIViewController {
         super.viewDidDisappear(animated)
     }
     @IBAction func OnEserciziTapped(_ sender: Any) {
-        print("ESERCIZI TAPPED")
         self.presentingViewController?.dismiss(animated: false, completion: nil)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }

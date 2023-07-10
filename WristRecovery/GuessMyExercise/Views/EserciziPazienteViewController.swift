@@ -75,7 +75,6 @@ class EserciziPazienteViewController: UIViewController {
         }
         var index = 0
         for _ in idE{
-            print("\(idE[index]+1) + \(idE[index+1])")
             if(idE[index]+1 != idE[index+1]){
                 id = idE[index]+1
                 break
@@ -98,7 +97,7 @@ class EserciziPazienteViewController: UIViewController {
 
 extension EserciziPazienteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped \(indexPath.row)")
+        //print("you tapped \(indexPath.row)")
     }
 }
 
@@ -136,7 +135,6 @@ extension EserciziPazienteViewController: UITableViewDataSource {
                 // do something like...
                 self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
                 self.viewDidLoad()
-                print("delete \(indexPath.row)")
 
             }))
             // show the alert
@@ -165,7 +163,6 @@ extension EserciziPazienteViewController: UITableViewDataSource {
                 // do something like...
                 self.db.deleteEsercizio(id: self.eserciziPaziente[indexPath.row].id)
                 self.viewDidLoad()
-                print("delete \(indexPath.row)")
 
             }))
             // show the alert

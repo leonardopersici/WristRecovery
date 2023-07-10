@@ -90,7 +90,6 @@ class MedicoViewController: UIViewController {
 
 extension MedicoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped \(indexPath.row)")
         
         let main = UIStoryboard(name: "Main", bundle: nil)
 
@@ -150,7 +149,6 @@ extension MedicoViewController: UITableViewDataSource {
                     }
                 }
                 self.viewDidLoad()
-                print("delete \(indexPath.row)")
 
             }))
             // show the alert
@@ -184,7 +182,6 @@ extension MedicoViewController: UITableViewDataSource {
                     }
                 }
                 self.viewDidLoad()
-                print("delete \(indexPath.row)")
 
             }))
             // show the alert

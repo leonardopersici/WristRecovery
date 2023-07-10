@@ -41,7 +41,6 @@ class PopUpEsercizioViewController: UIViewController {
     }
 
     @IBAction func OnConfermaButtonTapped(_ sender: Any) {
-        print("\(esercizioID) + \(medicoID) + \(pazienteID) + \(Int(flexField.text ?? "") ?? 1) + \(Int(extField.text ?? "") ?? 1)")
         db.insertEsercizio(id: esercizioID, assegnatoDa: medicoID, assegnatoA: pazienteID, flex: Int(flexField.text ?? "") ?? 1, ext: Int(extField.text ?? "") ?? 1, completato: 0)
         
         dismiss(animated: true)
