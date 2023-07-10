@@ -12,7 +12,6 @@ class Medico : Decodable{
     var id : Int = 0
     var username : String = ""
     var password : String = ""
-    var pazienti : [Int]?
 }
 
 class Paziente {

@@ -36,7 +36,7 @@ class DBManager {
     }
     
     func createTableMedici() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Medici(Id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT, pazienti TEXT);";
+        let createTableString = "CREATE TABLE IF NOT EXISTS Medici(Id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT, password TEXT);";
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(self.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -86,18 +86,14 @@ class DBManager {
         sqlite3_finalize(createTableStatement)
     }
     
-    func insertMedico(id:Int, username:String, password:String, pazienti:[Int]) {
+    func insertMedico(id:Int, username:String, password:String) {
         if(readMedici().isEmpty){
-            let insertStatementString = "INSERT INTO Medici (Id, username, password, pazienti) VALUES (?, ?, ?, ?);"
+            let insertStatementString = "INSERT INTO Medici (Id, username, password) VALUES (?, ?, ?);"
             var insertStatement: OpaquePointer? = nil
             if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-                 sqlite3_bind_int(insertStatement, 1, 0)
+                sqlite3_bind_int(insertStatement, 1, 0)
                 sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
                 sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
-                
-                let data = try! JSONEncoder().encode(pazienti)
-                let pazientiString = String(data: data, encoding: .utf8)
-                sqlite3_bind_text(insertStatement, 4, (pazientiString! as NSString).utf8String, -1, nil)
                   
                 if sqlite3_step(insertStatement) == SQLITE_DONE {
                     print("Successfully inserted Medico row.")
@@ -111,16 +107,12 @@ class DBManager {
         } else {
             for m in readMedici() {
                 if (id != m.id && username != m.username){
-                   let insertStatementString = "INSERT INTO Medici (Id, username, password, pazienti) VALUES (?, ?, ?, ?);"
+                   let insertStatementString = "INSERT INTO Medici (Id, username, password) VALUES (?, ?, ?);"
                    var insertStatement: OpaquePointer? = nil
                    if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
                        sqlite3_bind_int(insertStatement, 1, Int32(id))
                        sqlite3_bind_text(insertStatement, 2, (username as NSString).utf8String, -1, nil)
                        sqlite3_bind_text(insertStatement, 3, (password as NSString).utf8String, -1, nil)
-                       
-                       let data = try! JSONEncoder().encode(pazienti)
-                       let pazientiString = String(data: data, encoding: .utf8)
-                       sqlite3_bind_text(insertStatement, 4, (pazientiString! as NSString).utf8String, -1, nil)
                          
                        if sqlite3_step(insertStatement) == SQLITE_DONE {
                            print("Successfully inserted Medico row.")
@@ -242,20 +234,15 @@ class DBManager {
                     let id = Int(sqlite3_column_int(statement, 0))
                     let username = String(describing: String(cString: sqlite3_column_text(statement, 1)))
                     let password = String(describing: String(cString: sqlite3_column_text(statement, 2)))
-                    let pazienti = String(describing: String(cString: sqlite3_column_text(statement, 3)))
 
                     let model = Medico()
                     model.id = id
                     model.username = username
                     model.password = password
                     
-                    let data = try! JSONDecoder().decode([Int].self, from: pazienti.data(using: .utf8)!)
-                    
-                    model.pazienti = data
-                    
                     mainList.append(model)
                     print("Query Medici Result:")
-                    print("\(id) | \(username) | \(password) | \(pazienti)")
+                    print("\(id) | \(username) | \(password)")
                 }
             }
         return mainList
