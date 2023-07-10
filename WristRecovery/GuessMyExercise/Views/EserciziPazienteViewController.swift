@@ -75,8 +75,13 @@ class EserciziPazienteViewController: UIViewController {
         }
         var index = 0
         for _ in idE{
-            if(idE[index]+1 != idE[index+1]){
-                id = idE[index]+1
+            if(index+1 < idE.count){
+                if(idE[index]+1 != idE[index+1]){
+                    id = idE[index]+1
+                    break
+                }
+            }else {
+                id = idE.count
                 break
             }
             index += 1

@@ -40,7 +40,7 @@ extension ActionPrediction {
     /// Defines placeholder prediction labels beyond the scope of the
     /// action classifier model.
     private enum AppLabel: String {
-        case starting = "Svolgi gli esercizi e scala i livelli"
+        case starting = "Esegui le ripetizioni richieste per questo esercizio"
         case noPerson = "Nessuna Mano"
         case lowConfidence = "Non sono sicuro"
     }

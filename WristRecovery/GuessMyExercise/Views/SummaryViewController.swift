@@ -83,8 +83,7 @@ extension SummaryViewController: UITableViewDataSource {
             fatalError("Not an instance of `SummaryTableViewCell`.")
         }
 
-        if let frameCounts = actionFrameCounts {
-            let frameRate = WristRecoveryClassifier.frameRate
+        if actionFrameCounts != nil {
 
             let action = sortedActions[indexPath.row]
 

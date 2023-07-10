@@ -57,6 +57,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var nonSicuroLabel: UILabel!
     
+    @IBOutlet weak var extProgressBar: UIProgressView!
+    
+    @IBOutlet weak var flexProgressBar: UIProgressView!
+    
     /// Captures the frames from the camera and creates a frame publisher.
     var videoCapture: VideoCapture!
 
@@ -118,6 +122,9 @@ extension MainViewController {
         videoCapture.delegate = self
 
         updateUILabelsWithPrediction(.startingPrediction)
+        
+        extProgressBar.progress = 0
+        flexProgressBar.progress = 0
     }
 
     /// Configures the video captures session with the device's orientation.
@@ -286,8 +293,12 @@ extension MainViewController {
         if(actionLabel == "Flessione"){
             DispatchQueue.main.async {
                 self.flexReps.text = " " + String (totalReps) + " "
+                self.flexProgressBar.progress = Float(totalReps)/Float(self.esercizio.flex)
             }
             if(totalReps == esercizio.flex && actionRepCounts["Estensione"] == esercizio.ext){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    SpeechService.shared.startSpeech(text: "Esercizio completato")
+                }
                 completo = true
                 db.updateEsercizio(id: esercizio.id)
                 self.onSummaryButtonTapped()
@@ -295,8 +306,12 @@ extension MainViewController {
         } else if (actionLabel == "Estensione"){
             DispatchQueue.main.async {
                 self.extReps.text = " " + String (totalReps) + " "
+                self.extProgressBar.progress = Float(totalReps)/Float(self.esercizio.ext)
             }
             if(totalReps == esercizio.ext && actionRepCounts["Flessione"] == esercizio.flex){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    SpeechService.shared.startSpeech(text: "Esercizio completato")
+                }
                 completo = true
                 db.updateEsercizio(id: esercizio.id)
                 self.onSummaryButtonTapped()
