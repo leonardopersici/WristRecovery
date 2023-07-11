@@ -39,8 +39,19 @@ class PopUpPazienteViewController: UIViewController {
     
     @IBAction func OnConfermaButtonTapped(_ sender: Any) {
         if(usernameField.text != ""){
-            db.insertPaziente(id: pazienteID, username: usernameField.text!, password: "0000", medico: medicoID)
-            dismiss(animated: true)
+            db.insertPaziente(username: usernameField.text!, password: "0000", medico: medicoID)
+            if(db.checkP == false){
+                // create the alert
+                let alert = UIAlertController(title: "Username non valido", message: "Lo Username inserito per il nuovo paziente è già in utilizzo. Si prega di provare con un alto Username e cliccare su Conferma.", preferredStyle: UIAlertController.Style.alert)
+
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                dismiss(animated: true)
+            }
         } else {
             // create the alert
             let alert = UIAlertController(title: "Inserire Username", message: "E' necessario inserire uno username per il paziente che si vuole creare. Per favore inserire lo username del paziente e cliccare su Conferma.", preferredStyle: UIAlertController.Style.alert)

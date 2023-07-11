@@ -67,29 +67,9 @@ class EserciziPazienteViewController: UIViewController {
         
         let paziente = paziente.id
         let medico = medico.id
-        var id = Int()
-        let esercizi = db.readEsercizi()
-        var idE = [Int]()
-        for e in esercizi{
-            idE.append(e.id)
-        }
-        var index = 0
-        for _ in idE{
-            if(index+1 < idE.count){
-                if(idE[index]+1 != idE[index+1]){
-                    id = idE[index]+1
-                    break
-                }
-            }else {
-                id = idE.count
-                break
-            }
-            index += 1
-        }
         
         popUpEsercizioVC.medicoID = medico
         popUpEsercizioVC.pazienteID = paziente
-        popUpEsercizioVC.esercizioID = id
         
         // Define the presentation style for the main view.
         modalPresentationStyle = .popover

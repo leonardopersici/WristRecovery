@@ -14,7 +14,6 @@ class PopUpEsercizioViewController: UIViewController {
     
     var medicoID = Int()
     var pazienteID = Int()
-    var esercizioID = Int()
     
     @IBOutlet weak var flexField: UITextField!
     @IBOutlet weak var extField: UITextField!
@@ -41,7 +40,7 @@ class PopUpEsercizioViewController: UIViewController {
     }
 
     @IBAction func OnConfermaButtonTapped(_ sender: Any) {
-        db.insertEsercizio(id: esercizioID, assegnatoDa: medicoID, assegnatoA: pazienteID, flex: Int(flexField.text ?? "") ?? 1, ext: Int(extField.text ?? "") ?? 1, completato: 0)
+        db.insertEsercizio(assegnatoDa: medicoID, assegnatoA: pazienteID, flex: Int(flexField.text ?? "") ?? 1, ext: Int(extField.text ?? "") ?? 1, completato: 0)
         
         dismiss(animated: true)
     }
