@@ -12,8 +12,8 @@ import SQLite3
 class DBManager {
     var db : OpaquePointer?
     var path : String = "myDb.sqlite"
-    var checkM = false
-    var checkP = false
+    var checkM = true
+    var checkP = true
     init(){
         self.db = createDB()
         self.createTableMedici()

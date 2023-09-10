@@ -125,16 +125,17 @@ class LoginViewController: UIViewController {
                     break
                 }
             }
-        } else {
-            print("CREDENZIALI ERRATE")
-            // create the alert
-            let alert = UIAlertController(title: "Credenziali errate", message: "Lo username e/o la passsword inserite sono errati, si prega di riprovare.", preferredStyle: UIAlertController.Style.alert)
+            if (login == false) {
+                print("CREDENZIALI ERRATE")
+                // create the alert
+                let alert = UIAlertController(title: "Credenziali errate", message: "Lo username e/o la passsword inserite sono errati, si prega di riprovare.", preferredStyle: UIAlertController.Style.alert)
 
-            // add the actions (buttons)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
 
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
