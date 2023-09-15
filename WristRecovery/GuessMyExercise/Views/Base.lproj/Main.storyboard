@@ -541,25 +541,34 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Qy-nc6">
-                                <rect key="frame" x="27" y="114" width="321" height="656"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CQe-Qy-nc6">
+                                <rect key="frame" x="27" y="114" width="321" height="466"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <mutableString key="text">Una volta eseguito l’accesso con le credenziali che ti sono state fornite, potrai vedere le sessioni a te assegnate dal trainer, clicca su uno di questi per svolgerlo.
-Svolgi gli esercizi posizionando il telefono di fronte a te ed esegui esercizi di flessione ed estensione del polso fino a raggiungere l’obiettivo della sessione assegnata.
+                                <string key="text">Esegui l'accesso e clicca su una delle sessioni assegnate per svolgerla.
+Posizionati come mostrato nell'immagine ed esegui esercizi di flessione ed estensione del polso fino a raggiungere l’obiettivo della sessione assegnata.
 Ad ogni ripetizione riceverai un feedback audio-visivo.
-Al termine della sessione si aprirà la schermata di riepilogo e potrai cliccare sull’apposito bottone per tornare alle sessioni assegnate.</mutableString>
+Al termine della sessione potrai consultare il riepilogo e tornare alle sessioni assegnate.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Setup.png" translatesAutoresizingMaskIntoConstraints="NO" id="ljd-i5-hMs">
+                                <rect key="frame" x="27" y="588" width="321" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="760-v0-gGs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Y20-Qo-yKB" firstAttribute="top" secondItem="jc2-cO-1dZ" secondAttribute="bottom" constant="2" id="9aY-8l-hbf"/>
-                            <constraint firstItem="N3m-0s-EeJ" firstAttribute="top" secondItem="CQe-Qy-nc6" secondAttribute="bottom" constant="8" id="DdX-fd-HYC"/>
+                            <constraint firstItem="N3m-0s-EeJ" firstAttribute="top" secondItem="CQe-Qy-nc6" secondAttribute="bottom" constant="198" id="DdX-fd-HYC"/>
+                            <constraint firstItem="ljd-i5-hMs" firstAttribute="leading" secondItem="CQe-Qy-nc6" secondAttribute="leading" id="EXY-LT-fa0"/>
                             <constraint firstItem="CQe-Qy-nc6" firstAttribute="centerX" secondItem="Y20-Qo-yKB" secondAttribute="centerX" id="FT7-z6-b5a"/>
+                            <constraint firstItem="ljd-i5-hMs" firstAttribute="trailing" secondItem="CQe-Qy-nc6" secondAttribute="trailing" id="Woh-ig-VmX"/>
                             <constraint firstItem="CQe-Qy-nc6" firstAttribute="top" secondItem="u3M-TT-W9s" secondAttribute="bottom" constant="24" id="ZZu-Ow-0hB"/>
                             <constraint firstItem="u3M-TT-W9s" firstAttribute="leading" secondItem="Ez6-fu-NwZ" secondAttribute="leadingMargin" id="aa2-aD-JN8"/>
+                            <constraint firstItem="ljd-i5-hMs" firstAttribute="bottom" secondItem="CQe-Qy-nc6" secondAttribute="bottom" constant="198" id="c9U-z5-ut2"/>
                             <constraint firstItem="Y20-Qo-yKB" firstAttribute="centerX" secondItem="Ez6-fu-NwZ" secondAttribute="centerX" id="ewe-H3-dUm"/>
                             <constraint firstItem="CQe-Qy-nc6" firstAttribute="leading" secondItem="Ez6-fu-NwZ" secondAttribute="leadingMargin" constant="11" id="pNs-nk-0xM"/>
                             <constraint firstItem="u3M-TT-W9s" firstAttribute="centerY" secondItem="Y20-Qo-yKB" secondAttribute="centerY" id="vQt-Ne-apZ"/>
@@ -598,7 +607,7 @@ Al termine della sessione si aprirà la schermata di riepilogo e potrai cliccare
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gZ0-vv-e7h">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gZ0-vv-e7h">
                                 <rect key="frame" x="27" y="134" width="321" height="389"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <string key="text">La seguente applicazione è stata sviluppata da Leonardo Persici per lo svolgimento della tesi di laurea magistrale in Informatica presso il laboratorio AISLab dell'Università degli Studi di Milano. 
@@ -1430,9 +1439,10 @@ Il progetto è coordinato dal Professore Nunzio Alberto Borghese insieme a Eleon
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fhQ-qN-Ggu"/>
+        <segue reference="Ol5-9t-u6Y"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Setup.png" width="3206" height="1523"/>
         <image name="WristRecoveryBLU.png" width="460.79998779296875" height="477.1199951171875"/>
         <image name="arrow.triangle.2.circlepath.camera.fill" catalog="system" width="128" height="93"/>
         <image name="checklist.rtl" catalog="system" width="128" height="107"/>
