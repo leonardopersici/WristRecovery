@@ -459,16 +459,15 @@ extension MainViewController {
 
             // Create a transform that converts the poses' normalized point
             // coordinates `[0.0, 1.0]` to properly fit the frame's size.
-            let pointTransform = CGAffineTransform(scaleX: frameSize.width,
-                                                   y: frameSize.height)
+            //let pointTransform = CGAffineTransform(scaleX: frameSize.width, y: frameSize.height)
 
-            guard let poses = poses else { return }
+            //guard let poses = poses else { return }
 
             // Draw all the poses Vision found in the frame.
-            for pose in poses {
+            /*for pose in poses {
                 // Draw each pose as a wireframe at the scale of the image.
                 pose.drawWireframeToContext(cgContext, applying: pointTransform)
-            }
+            }*/
         }
 
         // Update the UI's full-screen image view on the main thread.

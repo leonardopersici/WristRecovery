@@ -102,6 +102,9 @@ extension PazienteViewController: UITableViewDataSource {
         if(eserciziPaziente[indexPath.row].completato == 1){
             esercizioCell.doneIcon.isHidden = false
             esercizioCell.todoIcon.isHidden = true
+        } else {
+            esercizioCell.doneIcon.isHidden = true
+            esercizioCell.todoIcon.isHidden = false
         }
         esercizioCell.esercizioLabel.text = "Sessione \(indexPath.row + 1)"
         esercizioCell.flexLabel.text = "Flessioni: \(eserciziPaziente[indexPath.row].flex)"
