@@ -111,7 +111,7 @@ extension EserciziPazienteViewController: UITableViewDataSource {
         //delete
         let delete = UIContextualAction(style: .normal, title: "Elimina") { (action, view, completionHandler) in
             // create the alert
-            let alert = UIAlertController(title: "Elimina esercizio", message: "Cliccando su Elimina confermi la cancellazione dell'esercizio selezionato. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Elimina Sessione", message: "Cliccando su Elimina confermi la cancellazione della Sessione selezionata. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
 
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Annulla", style: UIAlertAction.Style.cancel, handler: nil))
@@ -139,7 +139,7 @@ extension EserciziPazienteViewController: UITableViewDataSource {
         //delete
         let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
             // create the alert
-            let alert = UIAlertController(title: "Elimina esercizio", message: "Cliccando su Elimina confermi la cancellazione dell'esercizio selezionato. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Elimina Sessione", message: "Cliccando su Elimina confermi la cancellazione della Sessione selezionata. Clicca su Annulla per cancellare l'operazione.", preferredStyle: UIAlertController.Style.alert)
 
             // add the actions (buttons)
             alert.addAction(UIAlertAction(title: "Annulla", style: UIAlertAction.Style.cancel, handler: nil))
